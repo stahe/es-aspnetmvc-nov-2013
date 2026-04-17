@@ -1,0 +1,907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción a ASP.NET MVC con ejemplos prácticos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/es-aspnetmvc-nov-2013/introduccion.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="fundamentos-de-la-programacion-web.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. Introducción - Introducción a ASP.NET MVC con ejemplos prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción a ASP.NET MVC con ejemplos prácticos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduccion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción a ASP.NET MVC con ejemplos prácticos" class="md-header__button md-logo" aria-label="Introducción a ASP.NET MVC con ejemplos prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a ASP.NET MVC con ejemplos prácticos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stahe/es-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción a ASP.NET MVC con ejemplos prácticos" class="md-nav__button md-logo" aria-label="Introducción a ASP.NET MVC con ejemplos prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción a ASP.NET MVC con ejemplos prácticos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stahe/es-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduccion.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-el-papel-de-aspnet-mvc-en-una-aplicacion-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. El papel de ASP.NET MVC en una aplicación Web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-el-modelo-de-desarrollo-aspnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. El modelo de desarrollo ASP.NET
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-herramientas-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Herramientas utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fundamentos-de-la-programacion-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Fundamentos de la programación web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="controladores-acciones-enrutamiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Controladores, Acciones, Enrutamiento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modelo-de-una-accion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. El modelo de una acción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="la-vista-y-su-modelo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. La vista y su modelo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ver-internacionalizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Ver Internacionalización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ajaxificacion-de-una-aplicacion-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Ajaxificación de una aplicación ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion-provisional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Conclusión provisional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="estudio-de-caso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Estudio de caso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Apéndices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a id="refheading1882601168461456"></a></p>
+<h1 id="1-introduccion">1. Introducción</h1>
+<p>El PDF de este documento está disponible |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBvzwT_Kes9RYrEXGIAtVR_ASQCInf8AV954WMEnQUkVto?e=nDsCCH">AQUÍ</a>|.</p>
+<p>Los ejemplos de este documento están disponibles en |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=bxYSux">AQUÍ</a>|.</p>
+<p>Aquí pretendemos introducir, a través de ejemplos, los conceptos clave de ASP.NET MVC, un framework web .NET que proporciona un marco para el desarrollo de aplicaciones web según el patrón MVC (Modelo-Vista-Controlador).</p>
+<p>La comprensión de los ejemplos de este documento requiere pocos requisitos previos. Sólo son necesarios conocimientos básicos del lenguaje C#. Esto se puede encontrar en el documento <strong>Introducción al lenguaje C</strong> en el URL [<a href="http://tahe.developpez.com/dotnet/csharp">http://tahe.developpez.com/dotnet/csharp</a>]. Un caso este estudio permite poner en práctica los conocimientos adquiridos sobre ASP.NET MVC. Utiliza el ORM (Object-Relational Mapper) de Entity Framework. Este ORM se presenta en el documento <strong>Introducción a Entity Framework 5 Code First</strong>, disponible en [<a href="http://tahe.developpez.com/dotnet/ef5cf">http://tahe.developpez.com/dotnet/ef5cf</a>].</p>
+<p>Los distintos ejemplos de este documento están disponibles en el URL [<a href="http://tahe.developpez.com/dotnet/aspnet-mvc">http://tahe.developpez.com/dotnet/aspnetmvc</a>] como descarga <em>ZIP</em> archivo.</p>
+<p>Este documento está incompleto en muchos aspectos. Para obtener más información sobre ASP.NET MVC, puede utilizar las siguientes referencias:</p>
+<ul>
+<li><strong>[ref1]</strong>: el libro &quot;<strong>Pro</strong> <strong><span style="color: #000000">ASP.NET MVC 4</span></strong>&quot;escrito por <strong>Adam Freeman</strong> y publicado por <strong>Apress</strong>. Es un libro excelente. Si estuviera disponible en línea de forma gratuita y en francés, este documento sería innecesario. Recomiendo a quien pueda hacerlo que aprenda ASP.NET MVC utilizando este libro. El código fuente de los ejemplos del libro está disponible gratuitamente en [<a href="http://www.apress.com/9781430242369">http://www.apress.com/9781430242369</a>];</li>
+<li><strong>[ref2]</strong>: el sitio web del marco [<a href="http://www.asp.net/mvc">http://www.asp.net/mvc</a>]. Allí encontrará todo el material necesario para el autoaprendizaje. Una versión francesa está disponible en el URL [<a href="http://dotnet.developpez.com/mvc/">http://dotnet.developpez.com/mvc/</a>];</li>
+<li>el sitio web [developpez.com] dedicado a ASP.NET [<a href="http://dotnet.developpez.com/aspnet/">http://dotnet.developpez.com/aspnet/</a> ].</li>
+</ul>
+<p>Este documento se ha redactado para que pueda leerse sin tener un ordenador a mano. Por ello, se incluyen muchas capturas de pantalla.</p>
+<p><a id="refheading99511454977699"></a></p>
+<h2 id="11-el-papel-de-aspnet-mvc-en-una-aplicacion-web">1.1. El papel de ASP.NET MVC en una aplicación Web</h2>
+<p>En primer lugar, situemos ASP.NET MVC dentro del desarrollo de una aplicación web. Lo más habitual es que se construya sobre una arquitectura multicapa como la siguiente:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D8000001C76DFA2B2A.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000001C76DFA2B2A.png" /></td></tr></table>
+
+<ul>
+<li>el [<strong>Web</strong>la capa [...] es la capa en contacto con el usuario de la aplicación web. El usuario interactúa con la aplicación web a través de páginas web mostradas por un navegador. <strong>Es en esta capa donde ASP.NET MVC reside, y sólo en esta capa;</strong></li>
+<li>el [<strong>empresa</strong>la capa [DAO] implementa la lógica de negocio de la aplicación, como el cálculo de un salario o una factura. Esta capa utiliza datos del usuario a través de la capa [Web] y del DBMS a través de la capa [DAO];</li>
+<li>El [<strong>DAO</strong>(Objetos de acceso a datos), la capa [<strong>ORM</strong>] (Object Relational Mapper), y el conector ADO.NET gestiona el acceso a los datos en la capa DBMS. La capa [<strong>ORM</strong>actúa como puente entre los objetos manejados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Dos ORMs se utilizan habitualmente en el mundo .NET: <strong>NHibernate</strong> (<a href="http://sourceforge.net/projects/nhibernate/">http://sourceforge.net/projects/nhibernate/</a>) y <strong>Marco de entidades</strong> (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx">http://msdn.microsoft.com/en-us/data/ef.aspx</a>);</li>
+<li>la integración de estas capas puede lograrse utilizando un contenedor de inyección de dependencias como Spring (<a href="http://www.springframework.net/">http://www.springframework.net/</a>);</li>
+</ul>
+<p>La mayoría de los ejemplos que se ofrecen a continuación utilizarán una sola capa, la capa [Web]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002CB000001344402A749.png" style="display:inline-block; margin:4px;width:6.62cm;height:2.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000002CB000001344402A749.png" /></td></tr></table>
+
+<p>Sin embargo, este documento concluirá con la construcción de una aplicación web multicapa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E50000018DC284155D.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E50000018DC284155D.png" /></td></tr></table>
+
+<p><a id="refheading99531454977699"></a></p>
+<h2 id="12-el-modelo-de-desarrollo-aspnet">1.2. El modelo de desarrollo ASP.NET</h2>
+<p>ASP.NET MVC implementa el patrón arquitectónico MVC (Modelo-Vista-Controlador) de la siguiente manera:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000718000002334AE9A6E1.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.579cm;" class="odt-zoomable" data-zoom-src="images/1000000000000718000002334AE9A6E1.png" /></td></tr></table>
+
+<p>La tramitación de una solicitud de cliente procede del siguiente modo:</p>
+<ol>
+<li><strong>solicitar</strong> - los URLs solicitados tienen la forma <em>http://machine:port/contexte/Controlleur/Action/param1/param2/....?p1=v1&amp;p2=v2&amp;...</em> El [Controlador frontal] utiliza un archivo de configuración para &quot;dirigir&quot; la solicitud al controlador correcto y a la acción correcta dentro de ese controlador. Para ello, utiliza el archivo de configuración [<em>Controlador/Acción</em>] del URL. El resto del URL [<em>/param1/param2/...</em>consta de parámetros opcionales que se pasarán a la acción. La dirección <strong>&quot;C&quot;</strong> en MVC aquí se refiere a la cadena [Controlador frontal, Controlador, Acción]. Si la cadena [<em>Controlador/Acción</em>no conduce a un controlador o acción existente, el servidor web responderá que no se ha encontrado el URL solicitado.</li>
+</ol>
+<ol start="2">
+  <li>procesamiento
+  </li>
+</ol>
+<ul>
+  <li>La acción seleccionada puede utilizar los parámetros que el [Front Controller] le ha pasado. Estos pueden provenir de varias fuentes:
+  </li>
+  <li>el [<i>/param1/param2/...</i>] del URL,
+  </li>
+  <li>el [<i>p1=v1&amp;p2=v2</i>] parámetros del URL<i>,</i>
+  </li>
+  <li>parámetros enviados por el navegador con su solicitud;
+  </li>
+  <li>al procesar la solicitud del usuario, la acción puede necesitar la capa [de negocio] [2b]. Una vez procesada la petición del cliente, puede desencadenar varias respuestas. Un ejemplo clásico es:
+  </li>
+  <li>una página de error si la solicitud no ha podido procesarse correctamente
+  </li>
+  <li>una página de confirmación en caso contrario
+  </li>
+  <li>la acción ordena que se muestre una vista específica [3]. Esta vista mostrará los datos conocidos como <b>ver modelo</b>. Este es el <b>M </b>en MVC. La acción creará este modelo M [2c] e instruirá a un <b>V</b> que se mostrará [3];
+  </li>
+</ul>
+<ol>
+  <li><b>respuesta</b>-la vista seleccionada <b>V </b>utiliza el modelo <b>M </b>construido por la acción para inicializar las partes dinámicas de la respuesta HTML que debe enviar al cliente, y luego envía esta respuesta.
+  </li>
+</ol>
+
+<p>Aclaremos ahora la relación entre la arquitectura web MVC y la arquitectura por capas. Dependiendo de cómo definamos la <strong>modelo</strong>, estos dos conceptos pueden o no estar relacionados. Consideremos una aplicación web ASP.NET MVC de una sola capa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062E00000242EE335F0F.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E00000242EE335F0F.png" /></td></tr></table>
+
+<p>If we implement the [Web] layer with ASP.NET MVC, we will indeed have an MVC web architecture but not a multi-layer architecture. Here, the [Web] layer will handle everything: presentation, business logic, and data access. It is the actions that will perform this work.</p>
+<p>Consideremos ahora una arquitectura web multicapa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007260000018CC3D6C76D.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.895cm;" class="odt-zoomable" data-zoom-src="images/10000000000007260000018CC3D6C76D.png" /></td></tr></table>
+
+<p>La capa [Web] puede implementarse sin un framework y sin seguir el modelo MVC. Tenemos entonces una arquitectura multicapa, pero la capa Web no implementa el modelo MVC.</p>
+<p>Así, la capa [Web] anterior puede implementarse con ASP.NET MVC, dando lugar a una arquitectura por capas con una capa [Web] de estilo MVC. Una vez hecho esto, podemos sustituir esta capa ASP.NET MVC por una capa clásica ASP.NET (WebForms) manteniendo el resto (lógica de negocio, DAO, ORM) <strong>sin cambios</strong>.  Entonces tenemos una arquitectura en capas con una capa [Web] que ya no está basada en MVC.</p>
+<p>En MVC, dijimos que el modelo M era el de la vista V, i.e, el conjunto de datos mostrados por la vista V. Se da otra definición del modelo M en MVC:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000019EAC026A07.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.918cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000019EAC026A07.png" /></td></tr></table>
+
+<p>Muchos autores consideran que lo que hay a la derecha de la capa [Web] constituye el modelo M de MVC. Para evitar ambigüedades, podemos referirnos a:</p>
+<ul>
+  <li><b>el modelo de dominio </b>cuando se refiere a todo lo que está a la derecha de la capa [Web]
+  </li>
+  <li>el <b>ver modelo </b>cuando se refiere a los datos mostrados por una vista V
+  </li>
+</ul>
+
+<p>En lo sucesivo, el término &quot;modelo M&quot; se referirá exclusivamente al <strong>modelo de</strong> V <strong>ver</strong>.</p>
+<p><a id="refheading99551454977699"></a></p>
+<h2 id="13-herramientas-utilizadas">1.3. Herramientas utilizadas</h2>
+<p>De cara al futuro, estamos utilizando (a partir de septiembre de 2013) las versiones Express de Visual Studio 2012:</p>
+<ul>
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop</a>  ] para aplicaciones de escritorio;
+  </li>
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-web">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-Web</a> ] para aplicaciones web.
+  </li>
+</ul>
+
+<p>Para instalar las últimas versiones de estos productos, puede utilizar el [Instalador de la plataforma web] de Microsoft (<a href="http://www.microsoft.com/web/downloads/platform.aspx">http://www.microsoft.com/Web/downloads/platform.aspx</a>).</p>
+<p>Además, utiliza la herramienta de Google <strong>Cromo</strong> navegador (<a href="http://www.google.fr/intl/fr/chrome/browser/">http://www.google.fr/intl/fr/chrome/browser/</a>). Instale el [<a id="advanced-rest-client"></a> Extensión [Advanced Rest Client] ( ). He aquí cómo hacerlo:</p>
+<ul>
+  <li>Vaya a [Google Web Store] (<a href="https://chrome.google.com/webstore">https://chrome.google.com/webstore</a>) utilizando el navegador Chrome;
+  </li>
+  <li>busca la aplicación [Advanced Rest Client]:
+  </li>
+</ul>
+
+<p><img src="images/10000000000001B0000000D21DA44C58.png" style="width:7.999cm;height:3.889cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B0000000D21DA44C58.png" /></p>
+<ul>
+  <li>la aplicación estará disponible para su descarga:
+  </li>
+</ul>
+
+<p><img src="images/10000000000003BB000000AE1112526C.png" style="width:17.48cm;height:3.184cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></p>
+<ul>
+  <li>para conseguirlo, tendrás que crear una cuenta de Google. A continuación, la [Google Web Store] te pedirá confirmación [1]:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000083800000381099DA849.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.673cm;" class="odt-zoomable" data-zoom-src="images/100000000000083800000381099DA849.png" /></td></tr></table>
+
+<ul>
+  <li>En [2], la extensión añadida está disponible en la opción [Aplicaciones] [3]. Esta opción aparece en cada nueva pestaña que crees (CTRL-T) en el navegador.
+  </li>
+</ul>
+
+<p><a id="refheading99631454977699"></a></p>
+<h2 id="14-ejemplos">1.4. Ejemplos</h2>
+<p>La mayoría de los ejemplos de aprendizaje se limitarán únicamente a la capa web:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006370000023DEEFC5AC7.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000006370000023DEEFC5AC7.png" /></td></tr></table>
+
+<p>Una vez finalizado este tutorial, presentaremos una aplicación web multicapa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071F000002349B70ADB8.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.567cm;" class="odt-zoomable" data-zoom-src="images/100000000000071F000002349B70ADB8.png" /></td></tr></table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        Este curso-tutorial escrito por <strong>Serge Tahé</strong> se pone a disposición del público según los términos de la
+        <em>Licencia Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir en las mismas condiciones 3.0 no adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

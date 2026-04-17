@@ -1,0 +1,2222 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción a ASP.NET MVC con ejemplos prácticos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/es-aspnetmvc-nov-2013/ver-internacionalizacion.html">
+      
+      
+        <link rel="prev" href="la-vista-y-su-modelo.html">
+      
+      
+        <link rel="next" href="ajaxificacion-de-una-aplicacion-aspnet.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>6. Ver Internacionalización - Introducción a ASP.NET MVC con ejemplos prácticos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introducción a ASP.NET MVC con ejemplos prácticos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-ver-internacionalizacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introducción a ASP.NET MVC con ejemplos prácticos" class="md-header__button md-logo" aria-label="Introducción a ASP.NET MVC con ejemplos prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a ASP.NET MVC con ejemplos prácticos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Ver Internacionalización
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stahe/es-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introducción a ASP.NET MVC con ejemplos prácticos" class="md-nav__button md-logo" aria-label="Introducción a ASP.NET MVC con ejemplos prácticos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introducción a ASP.NET MVC con ejemplos prácticos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stahe/es-aspnetmvc-nov-2013" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fundamentos-de-la-programacion-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Fundamentos de la programación web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="controladores-acciones-enrutamiento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Controladores, Acciones, Enrutamiento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="el-modelo-de-una-accion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. El modelo de una acción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="la-vista-y-su-modelo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. La vista y su modelo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Ver Internacionalización
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ver-internacionalizacion.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Ver Internacionalización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-localizacion-de-numeros-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Localización de números reales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-gestionar-una-cultura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Gestionar una cultura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-internacionalizar-el-modelo-de-vista-viewmodel14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Internacionalizar el modelo de vista [ViewModel14]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-internacionalizar-la-vista-action14getcshtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Internacionalizar la vista [Action14Get.cshtml]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-ejemplos-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Ejemplos de ejecución
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-internacionalizacion-de-fechas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Internacionalización de fechas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7. Conclusión
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ajaxificacion-de-una-aplicacion-aspnet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Ajaxificación de una aplicación ASP.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion-provisional.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Conclusión provisional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="estudio-de-caso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Estudio de caso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Apéndices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a id="refheading58144676630786"></a></p>
+<h1 id="6-ver-internacionalizacion">6. Ver Internacionalización</h1>
+<p><span style="color: #000000">Aquí abordaremos la cuestión de la internacionalización de la vista. Se trata de una cuestión compleja, y puede encontrarse una buena descripción de la misma en el siguiente artículo de Scott Hanselman:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">[</span><a href="http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx">http://www.hanselman.com/blog/GlobalizationInternationalizationAndLocalizationInASPNETMVC3JavaScriptAndJQueryPart1.aspx</a>]</p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En primer lugar, repasemos sus definiciones de los diversos términos relacionados con la internacionalización de la visión:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Internacionalización (i18n)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">hacer que la aplicación admita diferentes idiomas y configuraciones regionales</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Localización (l10n)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">hacer que la aplicación sea compatible con un par específico de idiomas/localidades</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Globalización</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">la combinación de <i>Internacionalización </i>y <i>Localización</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Idioma</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">lengua hablada - designada por un código ISO (fr: francés, es: español, en: inglés, ...)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Local</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">una variante de la lengua - también designada por un código ISO (en_GB: inglés británico, en_US: inglés americano, ...)</div></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Abordemos el problema con un primer ejemplo.</span></p>
+<p><a id="refheading543032071525573"></a></p>
+<h2 id="61-localizacion-de-numeros-reales">6.1. Localización de números reales</h2>
+<p><span style="color: #000000">Es posible que observe una anomalía en el formulario de entrada anterior:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">  </span></p>
+<p><img src="images/10000000000002B50000005CCBD6DD49.png" style="width:12.831cm;height:1.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B50000005CCBD6DD49.png" /></p>
+<p><span style="color: #000000">For the real number, we typed [0,3] and it was not accepted. You must type [0.3]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">  </span></p>
+<p><img src="images/10000000000001B400000060BFC6E1DC.png" style="width:8.07cm;height:1.78cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B400000060BFC6E1DC.png" /></p>
+<p><span style="color: #000000">Por tanto, el formato esperado es el anglosajón, no el francés. Una búsqueda rápida en Internet revela algunas soluciones. He aquí una.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Las acciones [GET] y [POST] pasan a ser las siguientes:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">    <span style="color:#008000">// Action13-GET</span></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">HttpGet</span>]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action13Get()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action13Get&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel11</span>());</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">    <span style="color:#008000">// Action13-POST</span></span>
+<span class="odt-code-line">    [<span style="color:#2b91af">HttpPost</span>]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action13Post(<span style="color:#2b91af">ViewModel11 </span>model)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action13Get&quot;</span>, model);</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">La vista [Action13Get.cshtml] es idéntica a la vista [Action12Get.cshtml] excepto por los scripts JavaScript:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">meta </span><span style="color:#0000ff">name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Action13Get<span style="color:#0000ff">&lt;</span><span style="color:#800000">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">link </span><span style="color:#0000ff">rel=&quot;stylesheet&quot; href=&quot;~/Content/Site.css&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery-1.8.2.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery.validate.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery.validate.unobtrusive.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/myscripts.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/head</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><strong>Nota</strong>: Línea 5, ajuste la versión jQuery para que coincida con su versión de Visual Studio.</p>
+<ul>
+  <li>línea 9, hemos añadido un script [<a id="myscripts-js"></a> myscripts.js ]. Es el siguiente:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD00000248A32E1E58.png" style="display:inline-block; margin:4px;width:6.1cm;height:7.726cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000248A32E1E58.png" /></td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">// http://blog.instance-factory.com/?p=268</span>
+<span class="odt-code-line">$.validator.methods.number = <span style="color:#0000ff">function </span>(value, element) {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">return this</span>.optional(element) ||</span>
+<span class="odt-code-line">      !isNaN(Globalize.parseFloat(value));</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">$.validator.methods.date = <span style="color:#0000ff">function </span>(value, element) {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">return this</span>.optional(element) ||</span>
+<span class="odt-code-line">      !isNaN(Globalize.parseDate(value));</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">jQuery.extend(jQuery.validator.methods, {</span>
+<span class="odt-code-line">  range: <span style="color:#0000ff">function </span>(value, element, param) {</span>
+<span class="odt-code-line">    <span style="color:#008000">//Use the Globalization plugin to parse the value        </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">var </span>val = Globalize.parseFloat(value);</span>
+<span class="odt-code-line">    <span style="color:#0000ff">return this</span>.optional(element) || (</span>
+<span class="odt-code-line">        val &gt;= param[0] &amp;&amp; val &lt;= param[1]);</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">});</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">// on document load</span>
+<span class="odt-code-line">$(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>culture = <span style="color:#a31515">&#x27;fr-FR&#x27;</span>;</span>
+<span class="odt-code-line">  Globalize.culture(culture);</span>
+<span class="odt-code-line">});</span>
+</code></pre></div>
+
+<p><a id="jquery-globalization"></a>Indiqué en la línea 1 dónde se encontraba este script. No intentaré explicarlo porque no lo entiendo. JavaScript a veces puede ser un poco críptico. En las líneas 4, 9 y 15, se utiliza un objeto [Globalize]. Este es proporcionado por la librería jQuery Globalization , que puede obtenerse a través de [NuGet]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E3000002BDB68F72ED.png" style="display:inline-block; margin:4px;width:9.781cm;height:9.269cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E3000002BDB68F72ED.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000059D0000013BBF15C1D3.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/100000000000059D0000013BBF15C1D3.png" /></td></tr></table>
+
+<ul>
+  <li>en [1], gestionar los paquetes [NuGet] para el proyecto [Ejemplo-03];
+  </li>
+  <li>en [2], navegue por los paquetes en línea;
+  </li>
+  <li>en [3], escriba el término [globalización];
+  </li>
+  <li>en [4], instale el paquete [Globalize] para el proyecto JQuery.
+  </li>
+</ul>
+
+<p>Una vez instalado el paquete [Globalize], aparece una nueva carpeta en la carpeta [Scripts]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000584000001C13A93CAC2.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.724cm;" class="odt-zoomable" data-zoom-src="images/1000000000000584000001C13A93CAC2.png" /></td></tr></table>
+
+<ul>
+  <li>en [1], se ha creado una carpeta [globalize] con el script principal [globalize.js];
+  </li>
+  <li>en [2], el script principal [globalize.js] se complementa con scripts específicos para un idioma y una configuración regional;
+  </li>
+  <li>en [3], las escrituras específicas de la lengua francesa con los locales belga (BE), canadiense (CA), francés (FR), suizo (CH), luxemburgués (LU) y monegasco (MC).
+  </li>
+</ul>
+
+<p>El script [globalize.js] y nuestro script de cultura [globalize.culture.fr-FR.js] deben incluirse en la lista de scripts de nuestra página [Action13Get.cshtml]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">meta </span><span style="color:#0000ff">name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Action13Get<span style="color:#0000ff">&lt;</span><span style="color:#800000">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">...</span><span style="color:#0000ff"></span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/globalize/globalize.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/globalize/cultures/globalize.culture.fr-FR.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/myscripts.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/head</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li>línea 5: el script [globalize];
+  </li>
+  <li>línea 6: el script [globalize.culture.fr-FR.js];
+  </li>
+  <li>línea 7: el script [myscripts.js];
+  </li>
+</ul>
+
+<p>Echemos un vistazo más de cerca a este último guión:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">// http://blog.instance-factory.com/?p=268</span>
+<span class="odt-code-line">$.validator.methods.number = <span style="color:#0000ff">function </span>(value, element) {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">return this</span>.optional(element) ||</span>
+<span class="odt-code-line">      !isNaN(Globalize.parseFloat(value));</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">// on document load</span>
+<span class="odt-code-line">$(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>culture = <span style="color:#a31515">&#x27;fr-FR&#x27;</span>;</span>
+<span class="odt-code-line">  Globalize.culture(culture);</span>
+<span class="odt-code-line">});</span>
+</code></pre></div>
+
+<p>Las líneas 10-13 establecen la cultura del cliente en [fr-FR]:</p>
+<ul>
+  <li>línea 10: la función jQuery [ready] se ejecuta cuando el documento que contiene el script ha sido completamente cargado por el navegador;
+  </li>
+  <li>líneas 11-12: la cultura del cliente se establece en [fr-FR]. Para que esto funcione, el archivo [globalize.culture.fr-FR.js] debe incluirse en la lista de scripts JavaScript asociados al documento.
+  </li>
+</ul>
+
+<p>Ahora podemos probar la nueva aplicación:</p>
+<p><img src="images/10000000000001A70000005CF277001E.png" style="width:7.83cm;height:1.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A70000005CF277001E.png" /></p>
+<p>Ahora podemos introducir [0,3] para el número real, cosa que antes no podíamos hacer. Sin embargo, nos encontramos con otro problema:</p>
+<p><img src="images/10000000000001B000000026D182258D.png" style="width:7.999cm;height:0.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B000000026D182258D.png" /></p>
+<p>Arriba, la validación del lado del cliente nos permite introducir [11.2] utilizando la notación anglosajona. Este valor no se acepta en el lado del servidor cuando enviamos el formulario:</p>
+<p><img src="images/100000000000039500000024D39E39F5.png" style="width:16.979cm;height:0.67cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039500000024D39E39F5.png" /></p>
+<p>Debemos escribir [11,2], y entonces funciona tanto en el lado del cliente como en el del servidor. En el lado del cliente, la notación anglosajona no debe ser aceptada. Eso debe ser posible...</p>
+<p>Abordemos ahora la internacionalización de las vistas. Continuaremos con el ejemplo del formulario anterior ofreciéndolo en dos idiomas: Francés e inglés.</p>
+<p><a id="refheading58146676630786"></a></p>
+<h2 id="62-gestionar-una-cultura">6.2. Gestionar una cultura</h2>
+<p>El idioma de las vistas está controlado por el [<span style="color: #000000">Thread.CurrentThread.CurrentUICulture] </span>objeto<span style="color: #000000">. Para mostrar páginas en la cultura [fr-FR], escribimos:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Thread.CurrentThread.CurrentUICulture = new CultureInfo(&quot;fr-FR&quot;);
+</code></pre></div>
+<p>La localización (fechas, números, monedas, horas, etc.) está controlada por el objeto [Thread.CurrentThread.CurrentCulture]. Similar a lo escrito anteriormente, escribimos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Thread.CurrentThread.CurrentCulture = new CultureInfo(&quot;fr-FR&quot;);
+</code></pre></div>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Estas dos sentencias podrían colocarse en el constructor de cada controlador de la aplicación. Sin embargo, también podríamos querer factorizar este código que es común a todos los controladores. Tomaremos este enfoque.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Creamos dos nuevos controladores:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000000C20000004D3A845F11.png" style="width:3.59cm;height:1.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C20000004D3A845F11.png" /></p>
+<ul>
+  <li><span style="color: #000000">[I18NController] será la clase base para todos los controladores que utilicen la internacionalización;</span>
+  </li>
+  <li><span style="color: #000000">[SecondController] es un controlador de ejemplo derivado de [I18NController].</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El código del controlador [I18NController] es el siguiente:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Threading;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Mvc;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Examples.Controllers</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public abstract class</span><a id="i18ncontroller"></a><span style="color:#2b91af"> I18NController</span> : <span style="color:#2b91af">Controller</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>I18NController()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// retrieve the context of the current request</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">HttpContext </span>httpContext = <span style="color:#2b91af">HttpContext</span>.Current;</span>
+<span class="odt-code-line">      <span style="color:#008000">// check the request for the [lang] parameter</span></span>
+<span class="odt-code-line">      <span style="color:#008000">// look for it in the URL parameters</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span>language = httpContext.Request.QueryString[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// search for it in the posted parameters</span></span>
+<span class="odt-code-line">        language = httpContext.Request.Form[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// look for it in the user&#x27;s session</span></span>
+<span class="odt-code-line">        language = httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// First parameter of the HTTP AcceptLanguages header</span></span>
+<span class="odt-code-line">        language = httpContext.Request.UserLanguages[0];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// culture fr-FR</span></span>
+<span class="odt-code-line">        language = <span style="color:#a31515">&quot;fr-FR&quot;</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// set the language in the session</span></span>
+<span class="odt-code-line">      httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] = language;</span>
+<span class="odt-code-line">      <span style="color:#008000">// Set the thread&#x27;s culture            </span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture = <span style="color:#0000ff">new </span>System.Globalization.<span style="color:#2b91af">CultureInfo</span>(language);</span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentUICulture = <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">línea 7: [I18NController] deriva de la clase [Controller];</span>
+  </li>
+  <li><span style="color: #000000">línea 7: la clase se declara [abstracta] para impedir la instanciación directa: sólo puede derivarse para ser utilizada;</span>
+  </li>
+  <li><span style="color: #000000">línea 9: el constructor de la clase se ejecutará cada vez que se instancie un controlador derivado de [I18NController];</span>
+  </li>
+  <li><span style="color: #000000">línea 12: recuperamos el contexto de la petición HTTP que está siendo procesada por el controlador;</span>
+  </li>
+  <li><span style="color: #000000">línea 15: suponemos que el idioma se establece mediante un parámetro [lang] que se puede encontrar en varias ubicaciones. Buscamos en el siguiente orden:</span>
+    <ul>
+      <li><span style="color: #000000">línea 15: en los parámetros URL [?lang=es-US],</span>
+      </li>
+      <li><span style="color: #000000">línea 19: en los parámetros publicados [lang=de],</span>
+      </li>
+      <li><span style="color: #000000">línea 24: en la sesión del usuario,</span>
+      </li>
+      <li><span style="color: #000000">línea 29: en las preferencias de idioma enviadas por el cliente HTTP,</span>
+      </li>
+      <li><span style="color: #000000">línea 26: si no se encuentra nada, la configuración regional se establece en [fr-FR];</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">línea 37: almacenamos la configuración regional en la sesión. Aquí es donde se recuperará para peticiones posteriores. El usuario puede cambiarla incluyéndola en los parámetros de una petición GET o POST;</span>
+  </li>
+  <li><span style="color: #000000">líneas 39-40: establecemos la configuración regional de la vista que se mostrará una vez procesada la solicitud actual.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El controlador [SecondController] será el siguiente:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Example_03.Models;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Examples.Controllers;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web.Mvc;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Exemple_03.Controllers</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">SecondController </span>: <span style="color:#2b91af">I18NController</span></span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// Action14-GET</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpGet</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Get()</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel14</span>());</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// Action14-POST</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpPost</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Post(<span style="color:#2b91af">ViewModel14 </span>model)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, model);</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">Línea 7: [SecondController] extiende a [I18NController]. Esto garantiza que se ha inicializado la configuración regional de la vista que se va a mostrar;</span>
+  </li>
+  <li><span style="color: #000000">Línea 13: Utilizamos el modelo de vista [ViewModel14], que presentaremos en breve;</span>
+  </li>
+  <li><span style="color: #000000">Líneas 13 y 20: La vista [Action14Get.cshtml] muestra el formulario.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><a id="refheading58148676630786"></a></p>
+<h2 id="63-internacionalizar-el-modelo-de-vista-viewmodel14">6.3. Internacionalizar el modelo de vista [ViewModel14]</h2>
+<p><span style="color: #000000">El modelo de vista [ViewModel14] es el siguiente:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000181000001C669F9A7B6.png" style="display:inline-block; margin:4px;width:5.094cm;height:6.006cm;" class="odt-zoomable" data-zoom-src="images/1000000000000181000001C669F9A7B6.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Exemple_03.Resources;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Collections.Generic;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.ComponentModel.DataAnnotations;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Globalization;</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Net.Mail;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Example_03.Models</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">ViewModel14 </span>: <span style="color:#2b91af">IValidatableObject</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;atLeast4Characters&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;^.{4,}$&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;incorrectInfo&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>String1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;chaineauplus4&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;^.{1,4}$&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;incorrectInfo&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Chaine2 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;exactString4&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;^.{4,4}$&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;Incorrect info&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>String3 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;integer&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public int </span>Integer1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;integerInRange&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Range</span>(1, 100, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;InvalidValue&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public int </span>Integer2 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;reel&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>Reel1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;reelentrebornes&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Range</span>(10.2, 11.3, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;InvalidInfo&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public double </span>Reel2 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;email&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">EmailAddress</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;incorrectInfo&quot;</span>, ErrorMessage=<span style="color:#a31515">&quot;&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Email1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;date1&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;\s*\d{2}/\d{2}/\d{4}\s*&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;IncorrectInfo&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Regexp1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;date2&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">DataType</span>(<span style="color:#2b91af">DataType</span>.Date)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">DateTime </span>Date1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#008000">// validation</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">IEnumerable</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; Validate(<span style="color:#2b91af">ValidationContext </span>validationContext)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; results = <span style="color:#0000ff">new </span><span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt;();</span>
+<span class="odt-code-line">      <span style="color:#008000">// same error message for all</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span><span style="color:#2b91af">errorMessage</span> = <span style="color:#2b91af">MyResources</span>.ResourceManager.GetObject(<span style="color:#a31515">&quot;infoIncorrecte&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">CultureInfo</span>(System.Web.<span style="color:#2b91af">HttpContext</span>.Current.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>)).ToString();</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// Date 1</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(Date1.Date &lt;= <span style="color:#2b91af">DateTime</span>.Now.Date)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        results.Add(<span style="color:#0000ff">new </span><span style="color:#2b91af">ValidationResult</span>(errorMessage, <span style="color:#0000ff">new string</span>[] { <span style="color:#a31515">&quot;Date1&quot; </span>}));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// Email1</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">try</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">new </span><span style="color:#2b91af">MailAddress</span>(Email1);</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">catch</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        results.Add(<span style="color:#0000ff">new </span><span style="color:#2b91af">ValidationResult</span>(errorMessage, <span style="color:#0000ff">new string</span>[] { <span style="color:#a31515">&quot;Email1&quot; </span>}));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// Regexp1</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">try</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#2b91af">DateTime</span>.ParseExact(Regexp1, <span style="color:#a31515">&quot;dd/MM/yyyy&quot;</span>, <span style="color:#2b91af">CultureInfo</span>.CreateSpecificCulture(<span style="color:#a31515">&quot;fr-FR&quot;</span>));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">catch</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        results.Add(<span style="color:#0000ff">new </span><span style="color:#2b91af">ValidationResult</span>(errorMessage, <span style="color:#0000ff">new string</span>[] { <span style="color:#a31515">&quot;Regexp1&quot; </span>}));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// return the list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>results;</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Este modelo es la versión internacionalizada del modelo anterior [ViewModel11]. Describiremos el mecanismo de internacionalización para el primer atributo de la primera propiedad. Los demás atributos siguen el mismo mecanismo.</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line"><span style="color:#0000ff">public string </span>String1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En el modelo anterior [ViewModel11], estas líneas eran las siguientes:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">[<span style="color:#2b91af">Required</span>(ErrorMessage = <span style="color:#a31515">&quot;Information required&quot;</span>)]</span>
+<span class="odt-code-line"><span style="color:#0000ff">public string </span>String1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En la versión internacionalizada, línea 1, el texto a mostrar se coloca en un archivo de recursos. Aquí, este archivo se llama [MyResources.resx] (</span><em><span style="color: #000000">tipode</span></em><span style="color: #000000">) y se ha colocado en la raíz del proyecto. Se denomina archivo de recursos.</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018A00000265B06EB6F3.png" style="display:inline-block; margin:4px;width:5.212cm;height:8.11cm;" class="odt-zoomable" data-zoom-src="images/100000000000018A00000265B06EB6F3.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Aquí hemos creado tres archivos de recursos:</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">[MyResources]: recurso por defecto cuando no hay ningún recurso para la configuración regional actual;</span>
+  </li>
+  <li><span style="color: #000000">[MyResources.fr-FR]: recurso para la configuración regional [fr-FR];</span>
+  </li>
+  <li><span style="color: #000000">[MyResources.en-US]: recurso para la configuración regional [en-US];</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Para crear un archivo de recursos, siga estos pasos [1, 2, 3]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005AE00000383A258F38F.png" style="display:inline-block; margin:4px;width:17.999cm;height:11.128cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AE00000383A258F38F.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000522000002312847CC19.png" style="display:inline-block; margin:4px;width:17.383cm;height:7.422cm;" class="odt-zoomable" data-zoom-src="images/1000000000000522000002312847CC19.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Esto crea el archivo de recursos [MyResources2.resx]. Al hacer doble clic en él, aparece la página siguiente:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048F000000E80A658FAB.png" style="display:inline-block; margin:4px;width:15.439cm;height:3.069cm;" class="odt-zoomable" data-zoom-src="images/100000000000048F000000E80A658FAB.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Un archivo de recursos es un diccionario que contiene claves y valores asociados a esas claves. Introduzca la clave en [1], el valor en [2] y el ámbito del recurso en [3]. Para que estos recursos sean legibles, deben tener la extensión [</span><strong><span style="color: #000000">Público</span></strong><span style="color: #000000">] alcance. Volvamos a la línea</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">[</span><span style="color: #000000">ErrorMessageResourceType</span><span style="color: #000000">]: se refiere al archivo de recursos. El parámetro [typeof] es el nombre del archivo. Éste se convierte en una clase durante el proceso de compilación, y su binario se incluye en el ensamblado del proyecto. Así que, en última instancia, [MyResources] es el nombre de la clase de recursos;</span>
+  </li>
+  <li><span style="color: #000000">[</span><span style="color: #000000">ErrorMessageResourceName = </span><span style="color: #a31515">&quot;infoRequise&quot;</span><span style="color: #000000">]: se refiere a una clave en el archivo de recursos. En última instancia, la línea significa que el mensaje de error que se mostrará es el valor del archivo [MyResources] asociado a la clave [</span><span style="color: #a31515">infoRequise</span><span style="color: #000000">] llave.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Para crear el [</span><span style="color: #a31515">infoRequise</span><span style="color: #000000">y su valor asociado en el archivo [MyResources], proceda como sigue:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045E000001151F627ABE.png" style="display:inline-block; margin:4px;width:14.79cm;height:3.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000045E000001151F627ABE.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Introduzca la clave en [1], el valor en [2] y el ámbito del recurso en [3].</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Hay un último punto que aclarar: el espacio de nombres de la clase [MyResources]. Esto se define en las propiedades del archivo [MyResources.resx]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002BA0000017F29395012.png" style="display:inline-block; margin:4px;width:9.234cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/10000000000002BA0000017F29395012.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En [1], definimos el espacio de nombres de la clase [MyResources] que se creará a partir del archivo de recursos [MyResources.resx]. Volvamos a la línea internacionalizada que hemos examinado:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#2b91af">[Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En </span><em><span style="color: #000000">tipode</span></em><span style="color: #000000"> espera una clase, en este caso la clase [MyResources]. Para que esta clase sea encontrada, su espacio de nombres debe ser importado en la clase [ViewModel14]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Exemple_03.Resources;</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">For the [MyResources] class to be visible, the project must have been built at least once since the [MyResources] resource file was created. The code for this class is visible in the [MyResources.Designer.cs] file:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000000D10000002B6FFBA015.png" style="width:3.87cm;height:0.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D10000002B6FFBA015.png" /></p>
+<p><span style="color: #000000">Al hacer doble clic en este archivo, se accede al código de la clase [MyResources]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Example_03.Resources {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">using </span>System;</span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">[<span style="color:#0000ff">global</span>::System.CodeDom.Compiler.<span style="color:#2b91af">GeneratedCodeAttribute</span>(<span style="color:#a31515">&quot;System.Resources.Tools.StronglyTypedResourceBuilder&quot;</span>, <span style="color:#a31515">&quot;4.0.0.0&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#0000ff">global</span>::System.Diagnostics.<span style="color:#2b91af">DebuggerNonUserCodeAttribute</span>()]</span>
+<span class="odt-code-line">    [<span style="color:#0000ff">global</span>::System.Runtime.CompilerServices.<span style="color:#2b91af">CompilerGeneratedAttribute</span>()]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public class </span><span style="color:#2b91af">MyResources2 </span>{</span>
+<span class="odt-code-line">        </span>
+<span class="odt-code-line">  ...</span>
+<span class="odt-code-line">         <span style="color:#0000ff">public static string </span>infoRequired {</span>
+<span class="odt-code-line">            <span style="color:#0000ff">get </span>{</span>
+<span class="odt-code-line">                <span style="color:#0000ff">return </span>ResourceManager.GetString(<span style="color:#a31515">&quot;infoRequise&quot;</span>, resourceCulture);</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">línea 1: el espacio de nombres de la clase;</span>
+  </li>
+  <li><span style="color: #000000">línea 11: el [</span><span style="color: #000000">infoRequise</span><span style="color: #000000">se ha convertido en una propiedad estática de la clase [MyResources]. Es accesible mediante la notación [MyResources.infoRequise]. Además, esta propiedad tiene un ámbito [public]. Sin esto, no sería accesible. Es importante recordar esto porque, desafortunadamente, el ámbito por defecto es [internal], y esto puede causar errores difíciles de entender si olvidas cambiar el ámbito.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">¿Por qué hay ahora tres archivos de recursos?</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000000BA0000003919A6C624.png" style="width:3.44cm;height:1.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000BA0000003919A6C624.png" /></p>
+<p><span style="color: #000000">Creamos [MyResources.resx]. Este es el recurso raíz. A continuación, creamos tantos archivos de recursos [MyResources.locale.resx] como locales (idiomas) haya que gestionar. Aquí manejamos el francés [fr-FR] y el inglés americano [en-US]. Cuando la configuración regional actual no es ni [fr-FR] ni [en-US], se utiliza el recurso raíz [MyResources.resx].</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El contenido final de [MyResources.resx] es el siguiente:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">  </span></p>
+<p><img src="images/100000000000025B0000017836C24371.png" style="width:11.171cm;height:6.96cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000025B0000017836C24371.png" /></p>
+<p><span style="color: #000000">Los mensajes aparecerán en francés cuando no se reconozca la configuración regional. El contenido final de [MyResources.fr-FR.resx] es idéntico y se obtiene simplemente copiando el fichero.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El contenido final de [MyResources.en-US.resx] también se obtiene copiando el archivo y modificándolo a continuación de la siguiente manera:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">  </span></p>
+<p><img src="images/100000000000024C000001736336DEC1.png" style="width:10.89cm;height:6.87cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024C000001736336DEC1.png" /></p>
+<p><span style="color: #000000">Volvamos a la vista [ViewModel14] y su método [Validate]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">    <span style="color:#008000">// validation</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">IEnumerable</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; Validate(<span style="color:#2b91af">ValidationContext </span>validationContext)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; results = <span style="color:#0000ff">new </span><span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt;();</span>
+<span class="odt-code-line">      <span style="color:#008000">// same error message for all</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span><span style="color:#2b91af">errorMessage</span> = <span style="color:#2b91af">MyResources</span>.ResourceManager.GetObject(<span style="color:#a31515">&quot;infoIncorrecte&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">CultureInfo</span>(System.Web.<span style="color:#2b91af">HttpContext</span>.Current.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>)).ToString();</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// Date 1</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(Date1.Date &lt;= <span style="color:#2b91af">DateTime</span>.Now.Date)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        results.Add(<span style="color:#0000ff">new </span><span style="color:#2b91af">ValidationResult</span>(errorMessage, <span style="color:#0000ff">new string</span>[] { <span style="color:#a31515">&quot;Date1&quot; </span>}));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"><span style="color:#008000">...</span><span style="color:#008000"></span></span>
+<span class="odt-code-line">      <span style="color:#008000">// return the list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>results;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">La línea 7 muestra cómo recuperar un mensaje del archivo de recursos [MyResources]. Aquí, queremos recuperar el mensaje asociado con la clave [infoIncorrecte] en la cultura actual:</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><b><span style="color: #000000">MyResources.ResourceManager.GetObject(&quot;infoIncorrecte&quot;, new CultureInfo(&quot;en-US&quot;)) </span></b><span style="color: #000000">: recupera el objeto asociado a la clave [infoIncorrecte] del archivo de recursos [MyResources.en-US.resx];</span>
+  </li>
+  <li><span style="color: #000000">vimos que el controlador [I18NController] establece la cultura actual en la sesión asociada a la clave [lang]. Por lo tanto, la cultura actual se puede recuperar utilizando </span><b><span style="color: #000000">System.Web.HttpContext.Current.Session[&quot;lang&quot;] as string</span></b><span style="color: #000000">;</span>
+  </li>
+  <li><span style="color: #000000">El recurso se recupera como un [objeto]. Para obtener el mensaje de error, le aplicamos el método [ToString].</span>
+  </li>
+</ul>
+
+<p><a id="refheading58150676630786"></a></p>
+<h2 id="64-internacionalizar-la-vista-action14getcshtml">6.4. Internacionalizar la vista [Action14Get.cshtml]</h2>
+<p><span style="color: #000000">Actualizamos la vista de visualización del formulario de la siguiente manera:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000000C40000004AE3DCAE23.png" style="width:3.63cm;height:1.371cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C40000004AE3DCAE23.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">@model Exemple_03.Models.<span style="color:#2b91af">ViewModel14</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>Exemple_03.Resources</span>
+<span class="odt-code-line">@{</span>
+<span class="odt-code-line">  Layout = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">meta </span><span style="color:#0000ff">name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Action14Get<span style="color:#0000ff">&lt;</span><span style="color:#800000">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">link </span><span style="color:#0000ff">rel=&quot;stylesheet&quot; href=&quot;~/Content/Site.css&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery-1.8.2.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery.validate.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery.validate.unobtrusive.min.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/globalize/globalize.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/globalize/cultures/globalize.culture.fr-FR.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/globalize/cultures/globalize.culture.en-US.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/myscripts2.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    $(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">var </span>culture = &#x27;@System.Threading.<span style="color:#2b91af">Thread</span>.CurrentThread.<span style="color:#a31515">CurrentCulture&#x27;</span>;</span>
+<span class="odt-code-line">        Globalize.culture(culture);</span>
+<span class="odt-code-line">      });</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">h3</span><span style="color:#0000ff">&gt;</span>ASP.NET MVC Form - Internationalization<span style="color:#0000ff">&lt;</span><span style="color:#800000">/h3</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Action14Post&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">thead</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.type<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.value<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.error<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/thead</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">tbody</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.LabelFor(m =&gt; m.String1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.EditorFor(m =&gt; m.String1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.ValidationMessageFor(m =&gt; m.String1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">...</span><span style="color:#0000ff"></span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tbody</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">input </span><span style="color:#0000ff">type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">&lt;!-- language selection --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Lang&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>French<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>English<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><strong><span style="color: #000000">Nota</span></strong><span style="color: #000000">: Línea 14-Asegúrese de que la versión jQuery coincide con su versión de Visual Studio.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Empecemos por la parte más sencilla, las líneas 36-38. Utilizan las propiedades estáticas de la clase [MyResources] que acabamos de describir. Para acceder a la clase [MyResources], debes importar su espacio de nombres (línea 2).</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En los mensajes internacionalizados, también debe incluir los mostrados por el marco de validación del lado del cliente. Para ello, utiliza las librerías jQuery en las líneas 17-19. Nosotros utilizamos los ficheros jQuery para las dos localizaciones que soportamos: [fr-FR] y [en-US]. Además, recordará que la vista [Action13Get] utilizaba el siguiente script JavaScript [myscripts.js]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line">// on document load</span>
+<span class="odt-code-line">$(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>culture = <span style="color:#a31515">&#x27;fr-FR&#x27;</span>;</span>
+<span class="odt-code-line">  Globalize.culture(culture);</span>
+<span class="odt-code-line">});</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Ahora, la cultura ya no es sólo [fr-FR]; varía. Por lo tanto, estas líneas son ahora generadas por la propia vista [Action14Get] en las líneas 21-26. Estas seis líneas se incluirán en la página HTML enviada al cliente.</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">Línea 23: La variable JavaScript [culture] se inicializa con la cultura actual del hilo que gestiona la petición. Puede recordar que esto fue inicializado por el constructor de la clase [I18NController]:</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">      <span style="color:#008000">// set the language in the session</span></span>
+<span class="odt-code-line">      httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] = language;</span>
+<span class="odt-code-line">      <span style="color:#008000">// we change the thread&#x27;s culture            </span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture = <span style="color:#0000ff">new </span>System.Globalization.<span style="color:#2b91af">CultureInfo</span>(language);</span>
+<span class="odt-code-line"><span style="color:#2b91af">Thread</span>.CurrentThread.CurrentUICulture = <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture;</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">If the current culture is [en-US], the JavaScript script embedded in the HTML page becomes:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    $(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">var </span>culture = <span style="color:#a31515">&#x27;en-US&#x27;</span>;</span>
+<span class="odt-code-line">        Globalize.culture(culture);</span>
+<span class="odt-code-line">      });</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p>Ya hemos mencionado que la función [$(document).ready] se ejecuta una vez que el navegador ha terminado de cargar la página. Su ejecución establecerá la cultura del framework de validación del lado del cliente. Con la cultura [en-US], los mensajes de error del framework estarán en inglés y procederán del fichero de recursos [MyResources.en-US.resx]. Veremos cómo.</p>
+<p>Examinemos ahora las líneas 57-65:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- language selection --&gt;</span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Lang&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>French<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>English<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>He aquí un segundo formulario; el primero se encuentra en las líneas 31-53. Este formulario muestra los siguientes enlaces en la parte inferior de la página:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014B000000AD2CD06CBB.png" style="display:inline-block; margin:4px;width:4.38cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000014B000000AD2CD06CBB.png" /></td></tr></table>
+
+<ul>
+  <li>línea 2: el formulario se envía a la acción [Lang] del controlador [Second]. Por ahora, no vemos ningún valor que se pueda publicar;
+  </li>
+  <li>líneas 6 y 7: al hacer clic en los enlaces se desencadena la ejecución de la función JavaScript [postForm]. ¿Dónde se encuentra esta función? En el script [myscripts2.js] referenciado en la línea 20 de la vista:
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B10000027B2ED6BE37.png" style="display:inline-block; margin:4px;width:5.729cm;height:8.401cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B10000027B2ED6BE37.png" /></td></tr></table>
+
+<p>Su contenido es el siguiente:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line"><span style="color:#0000ff">function</span><a id="postform"></a> postForm (lang, url) {</span>
+<span class="odt-code-line">  <span style="color:#008000">// retrieve the second form in the document</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>form = document.forms[1];</span>
+<span class="odt-code-line">  <span style="color:#008000">// add the hidden lang attribute to it</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>hiddenField = document.createElement(<span style="color:#a31515">&quot;input&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;type&quot;</span>, <span style="color:#a31515">&quot;hidden&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;name&quot;</span>, <span style="color:#a31515">&quot;lang&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;value&quot;</span>, lang);</span>
+<span class="odt-code-line">  <span style="color:#008000">// Add the hidden field to the form</span></span>
+<span class="odt-code-line">  form.appendChild(hiddenField);</span>
+<span class="odt-code-line">  <span style="color:#008000">// Add the hidden url attribute</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>hiddenField = document.createElement(<span style="color:#a31515">&quot;input&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;type&quot;</span>, <span style="color:#a31515">&quot;hidden&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;name&quot;</span>, <span style="color:#a31515">&quot;url&quot;</span>);</span>
+<span class="odt-code-line">  hiddenField.setAttribute(<span style="color:#a31515">&quot;value&quot;</span>, url);</span>
+<span class="odt-code-line">  <span style="color:#008000">// Add the hidden field to the form</span></span>
+<span class="odt-code-line">  form.appendChild(hiddenField);</span>
+<span class="odt-code-line">  <span style="color:#008000">// submit</span></span>
+<span class="odt-code-line">  form.submit();</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">// http://blog.instance-factory.com/?p=268</span>
+<span class="odt-code-line">$.validator.methods.number = <span style="color:#0000ff">function </span>(value, element) {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">return this</span>.optional(element) ||</span>
+<span class="odt-code-line">      !isNaN(Globalize.parseFloat(value));</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">$.validator.methods.date = <span style="color:#0000ff">function </span>(value, element) {</span>
+<span class="odt-code-line">  <span style="color:#0000ff">return this</span>.optional(element) ||</span>
+<span class="odt-code-line">      !isNaN(Globalize.parseDate(value));</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">jQuery.extend(jQuery.validator.methods, {</span>
+<span class="odt-code-line">  range: <span style="color:#0000ff">function </span>(value, element, param) {</span>
+<span class="odt-code-line">    <span style="color:#008000">//Use the Globalization plugin to parse the value        </span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">var </span>val = Globalize.parseFloat(value);</span>
+<span class="odt-code-line">    <span style="color:#0000ff">return this</span>.optional(element) || (</span>
+<span class="odt-code-line">        val &gt;= param[0] &amp;&amp; val &lt;= param[1]);</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">});</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p>Las líneas 22-40 son las mismas que ya estaban presentes en el script [myscripts.js] utilizado en el ejemplo anterior. No las revisaremos aquí. La función [postForm], que se ejecuta cuando se hace clic en los enlaces de idioma, está en las líneas 1-20:</p>
+<ul>
+  <li>línea 1: la función toma dos parámetros, [lang], que es la cultura seleccionada por el usuario, y [url], que es el URL al que debe redirigirse el navegador del cliente una vez realizado el cambio de cultura. Estos dos parámetros se especifican en la llamada:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>Français<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>English<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>línea 3: recuperamos una referencia al segundo formulario del documento;
+  </li>
+  <li>líneas 5-8: creamos la etiqueta mediante programación
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;xx-XX&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+<p>donde [xx-XX] es el valor del parámetro [lang] de la función;</p>
+<ul>
+  <li>Línea 10: De nuevo, mediante código, añadimos este campo al segundo formulario. En última instancia, se comporta como si este campo hubiera estado presente en el segundo formulario desde el principio. Por lo tanto, su valor será enviado. Eso es exactamente lo que queríamos;
+  </li>
+  <li>Líneas 11-17: Repetimos el mismo proceso para una etiqueta
+  </li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;url&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+<p>donde [url] es el valor del parámetro [url] de la función;</p>
+<ul>
+  <li>línea 19: ahora se contabiliza el segundo formulario. ¿A qué URL?
+  </li>
+</ul>
+
+<p>Tenemos que volver al código del segundo formulario de la página [Action14Get.cshtml]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Lang&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line"><span style="color:#0000ff">...</span><span style="color:#0000ff"></span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Por lo tanto, el formulario se envía al controlador URL [/Second/Lang]. A continuación, debemos definir una acción [Lang] en el controlador [SecondController]. Será como sigue:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">public class </span><span style="color:#2b91af">SecondController </span>: <span style="color:#2b91af">I18NController</span></span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// Action14-GET</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpGet</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Get()</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel14</span>());</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// Action14-POST</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpPost</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Post(<span style="color:#2b91af">ViewModel14 </span>model)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, model);</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// language</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpPost</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">RedirectResult </span>Lang(<span style="color:#0000ff">string </span>url)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// redirect the client to url</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">return new </span><span style="color:#2b91af">RedirectResult</span>(url);</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<ul>
+  <li>línea 18: la acción sólo responde a un [POST];
+  </li>
+  <li>línea 19: recupera sólo el parámetro llamado [url];
+  </li>
+  <li>línea 22: indica al cliente que redirija a este URL.
+  </li>
+</ul>
+
+<p>Pero, ¿qué ha pasado con el parámetro llamado [lang]? Ahora debemos recordar que el controlador [SecondController] deriva de la clase [I18NController] (línea 1 más abajo). Es este controlador el que maneja el parámetro [lang]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">  <span style="color:#0000ff">public abstract class </span><span style="color:#2b91af">I18NController </span>: <span style="color:#2b91af">Controller</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>I18NController()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// retrieve the context of the current request</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">HttpContext </span>httpContext = System.Web.<span style="color:#2b91af">HttpContext</span>.Current;</span>
+<span class="odt-code-line">      <span style="color:#008000">// check the request for the [lang] parameter</span></span>
+<span class="odt-code-line">      <span style="color:#008000">// search for it in the URL parameters</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span>language = httpContext.Request.QueryString[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// look for it in the posted parameters</span></span>
+<span class="odt-code-line">        language = httpContext.Request.Form[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// look for it in the user&#x27;s session</span></span>
+<span class="odt-code-line">        language = httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// First parameter of the HTTP AcceptLanguages header</span></span>
+<span class="odt-code-line">        language = httpContext.Request.UserLanguages[0];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// culture fr-FR</span></span>
+<span class="odt-code-line">        language = <span style="color:#a31515">&quot;fr-FR&quot;</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// set the language in the session</span></span>
+<span class="odt-code-line">      httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] = language;</span>
+<span class="odt-code-line">      <span style="color:#008000">// Set the thread&#x27;s culture            </span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture = <span style="color:#0000ff">new </span><span style="color:#2b91af">CultureInfo</span>(language);</span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentUICulture = <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>En nuestro ejemplo, el parámetro [lang] se pasa por referencia. Por lo tanto, se encontrará en la línea 13, se almacenará en la sesión en la línea 31, y se utilizará para actualizar la cultura del hilo actual en las líneas 33-34.</p>
+<p>¿Y ahora qué? Volvamos a los enlaces:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>French<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action14Get&#x27;)&quot;&gt;</span>English<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>La redirección URL es [/Segundo/Action14Get]. Por lo tanto, se ejecuta la acción [Action14Get]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#0000ff">public class </span><span style="color:#2b91af">SecondController </span>: <span style="color:#2b91af">I18NController</span></span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// Action14-GET</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpGet</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Get()</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel14</span>());</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Previamente se ejecuta el constructor de la clase [I18NController]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">  <span style="color:#0000ff">public abstract class </span><span style="color:#2b91af">I18NController </span>: <span style="color:#2b91af">Controller</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>I18NController()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// retrieve the context of the current request</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">HttpContext </span>httpContext = System.Web.<span style="color:#2b91af">HttpContext</span>.Current;</span>
+<span class="odt-code-line">      <span style="color:#008000">// check the request for the [lang] parameter</span></span>
+<span class="odt-code-line">      <span style="color:#008000">// look for it in the URL parameters</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span>language = httpContext.Request.QueryString[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// search for it in the posted parameters</span></span>
+<span class="odt-code-line">        language = httpContext.Request.Form[<span style="color:#a31515">&quot;lang&quot;</span>];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// look for it in the user&#x27;s session</span></span>
+<span class="odt-code-line">        language = httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// First parameter of the HTTP AcceptLanguages header</span></span>
+<span class="odt-code-line">        language = httpContext.Request.UserLanguages[0];</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">if </span>(language == <span style="color:#0000ff">null</span>)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// culture fr-FR</span></span>
+<span class="odt-code-line">        language = <span style="color:#a31515">&quot;fr-FR&quot;</span>;</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#008000">// set the language in the session</span></span>
+<span class="odt-code-line">      httpContext.Session[<span style="color:#a31515">&quot;lang&quot;</span>] = language;</span>
+<span class="odt-code-line">      <span style="color:#008000">// Set the thread&#x27;s culture            </span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture = <span style="color:#0000ff">new </span><span style="color:#2b91af">CultureInfo</span>(language);</span>
+<span class="odt-code-line">      <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentUICulture = <span style="color:#2b91af">Thread</span>.CurrentThread.CurrentCulture;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Esta vez, el parámetro [lang] se encontrará en la sesión en la línea 18. Supongamos que su valor es [en-US]. Esta cultura se convierte por tanto en la cultura del hilo que ejecuta la petición (líneas 33-34). Volvamos a la acción [Action14Get]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">      <span style="color:#008000">// Action14-GET</span></span>
+<span class="odt-code-line">      [<span style="color:#2b91af">HttpGet</span>]</span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action14Get()</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action14Get&quot;</span>, <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel14</span>());</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p>Línea 5, se creará una instancia del modelo de vista [ViewModel14]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">ViewModel14 </span>: <span style="color:#2b91af">IValidatableObject</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequise&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;atLeast4Characters&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;^.{4,}$&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoIncorrecte&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>String1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">....</span>
+</code></pre></div>
+
+<p>Como la cultura del hilo actual es [en-US], se utilizará el fichero [MyResources.en-US.resx]. Por lo tanto, los mensajes de error estarán en inglés.</p>
+<p>Una vez instanciado el modelo [ViewModel14], se muestra la vista [Action14Get.cshtml]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">@model Exemple_03.Models.<span style="color:#2b91af">ViewModel14</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>Exemple_03.Resources</span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>System.Threading</span>
+<span class="odt-code-line">@{</span>
+<span class="odt-code-line">  Layout = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">meta </span><span style="color:#0000ff">name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Action14Get<span style="color:#0000ff">&lt;</span><span style="color:#800000">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  ...</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    $(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">var </span>culture = <span style="color:#2b91af">&#x27;@Thread</span>.CurrentThread.<span style="color:#a31515">CurrentCulture&#x27;</span>;</span>
+<span class="odt-code-line">        Globalize.culture(culture);</span>
+<span class="odt-code-line">      });</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">h3</span><span style="color:#0000ff">&gt;</span>ASP.NET MVC Form - Internationalization<span style="color:#0000ff">&lt;</span><span style="color:#800000">/h3</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Action14Post&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">thead</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.type<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.value<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">th</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.error<span style="color:#0000ff">&lt;</span><span style="color:#800000">/th</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/thead</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">tbody</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p>Dado que la configuración regional actual del hilo es [en-US], el script incrustado en la página en las líneas 15-20 lo es:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    $(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">var </span>culture = <span style="color:#a31515">&#x27;en-US&#x27;</span>;</span>
+<span class="odt-code-line">        Globalize.culture(culture);</span>
+<span class="odt-code-line">      });</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Esto garantiza que el marco de validación utilizará los formatos US (fecha, moneda, números, etc.). Por la misma razón, los mensajes de las líneas 30-32 se recuperarán del archivo de recursos [MyResources.en-US.resx] y, por tanto, estarán en inglés.</span></p>
+<p><a id="refheading58152676630786"></a></p>
+<h2 id="65-ejemplos-de-ejecucion">6.5. Ejemplos de ejecución</h2>
+<p><span style="color: #000000">He aquí algunos ejemplos de ejecución:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000625000003765AA02931.png" style="display:inline-block; margin:4px;width:17.999cm;height:10.137cm;" class="odt-zoomable" data-zoom-src="images/1000000000000625000003765AA02931.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">en [1], la forma en francés; en [2], la forma en inglés.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051200000093F1A7932A.png" style="display:inline-block; margin:4px;width:17.171cm;height:1.946cm;" class="odt-zoomable" data-zoom-src="images/100000000000051200000093F1A7932A.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">En [3], en el lado del cliente, los mensajes de error están ahora en inglés.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">If we look at the page’s source code, we can see that these error messages have been embedded in the page, meaning they are generated by the ASP.NET view [Action14Get] and its view model [ViewModel14]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">        <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">label </span>for=<span style="font-style:italic;color:#2a00ff">&quot;Reel1&quot;</span><span style="color:#008080">&gt;</span>Real number<span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/label</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span>class=<span style="font-style:italic;color:#2a00ff">&quot;text-box single-line&quot; </span>data-val=<span style="font-style:italic;color:#2a00ff">&quot;true&quot; </span>data-val-number=<span style="font-style:italic;color:#2a00ff">&quot;The Real number field must be a number.&quot; </span>data-val-required=<span style="font-style:italic;color:#2a00ff">&quot;Required data&quot; </span>id=<span style="font-style:italic;color:#2a00ff">&quot;Reel1&quot; </span>name=<span style="font-style:italic;color:#2a00ff">&quot;Reel1&quot; </span>type=<span style="font-style:italic;color:#2a00ff">&quot;text&quot; </span>value=<span style="font-style:italic;color:#2a00ff">&quot;0&quot; </span><span style="color:#008080">/&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">span </span>class=<span style="font-style:italic;color:#2a00ff">&quot;field-validation-valid&quot; </span>data-valmsg-for=<span style="font-style:italic;color:#2a00ff">&quot;Reel1&quot; </span>data-valmsg-replace=<span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/span</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/tr</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">label </span>for=<span style="font-style:italic;color:#2a00ff">&quot;Reel2&quot;</span><span style="color:#008080">&gt;</span>Real number in range [10.2-11.3]<span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/label</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span>class=<span style="font-style:italic;color:#2a00ff">&quot;text-box single-line&quot; </span>data-val=<span style="font-style:italic;color:#2a00ff">&quot;true&quot; </span>data-val-number=<span style="font-style:italic;color:#2a00ff">&quot;The field &#x27;Real number in range [10.2-11.3]&#x27; must be a number.&quot;</span> data-val-range=<span style="font-style:italic;color:#2a00ff">&quot;Invalid data&quot; </span>data-val-range-max=<span style="font-style:italic;color:#2a00ff">&quot;11.3&quot; </span>data-val-range-min=<span style="font-style:italic;color:#2a00ff">&quot;10.2&quot; </span>data-val-required=<span style="font-style:italic;color:#2a00ff">&quot;Required data&quot; </span>id=<span style="font-style:italic;color:#2a00ff">&quot;Reel2&quot; </span>name=<span style="font-style:italic;color:#2a00ff">&quot;Reel2&quot; </span>type=<span style="font-style:italic;color:#2a00ff">&quot;text&quot; </span>value=<span style="font-style:italic;color:#2a00ff">&quot;0&quot; </span><span style="color:#008080">/&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">span </span>class=<span style="font-style:italic;color:#2a00ff">&quot;field-validation-valid&quot; </span>data-valmsg-for=<span style="font-style:italic;color:#2a00ff">&quot;Reel2&quot; </span>data-valmsg-replace=<span style="font-style:italic;color:#2a00ff">&quot;true&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/span</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/td</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/tr</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p><a id="refheading58154676630786"></a></p>
+<h2 id="66-internacionalizacion-de-fechas">6.6. Internacionalización de fechas</h2>
+<p><span style="color: #000000">La internacionalización es un tema complejo. Veamos la propiedad [Date1] y su calendario:</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">   </span></p>
+<p><img src="images/10000000000001FC00000108819F607A.png" style="width:9.41cm;height:4.89cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FC00000108819F607A.png" /></p>
+<p><span style="color: #000000">Podemos ver que el calendario es un calendario francés, aunque la cultura de la página sea [en-US]. En HTML5, hay un atributo [lang] que permite establecer el idioma de la página o de un componente de la página. Podemos entonces escribir el siguiente código en la vista [Action14Get.cshtml]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line">@model Exemple_03.Models.<span style="color:#2b91af">ViewModel14</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>Exemple_03.Resources</span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>System.Threading</span>
+<span class="odt-code-line">@{</span>
+<span class="odt-code-line">  Layout = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">  <span style="color:#0000ff">var </span>lang = Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>;  </span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html </span><span style="color:#0000ff">lang=&quot;</span>@lang<span style="color:#0000ff">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">línea 6: recuperar la configuración regional de la sesión;</span>
+  </li>
+  <li><span style="color: #000000">línea 11: establecemos el atributo [lang] de la página con este valor.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Las pruebas muestran que el calendario permanece en francés aunque la página se muestre en inglés. También hay un problema con el otro campo de fecha del formulario:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034A000001B65CBFA548.png" style="display:inline-block; margin:4px;width:11.139cm;height:5.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000034A000001B65CBFA548.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En [1], la fecha se sigue solicitando en el formato francés </span><strong><span style="color: #000000">dd/mm/aaaa </span></strong><span style="color: #000000">(20/11/2013), mientras que el formato estadounidense es el siguiente </span><strong><span style="color: #000000">mm/dd/aaaa </span></strong><span style="color: #000000">(10/21/2013). Intentaremos resolver estos dos problemas con una nueva vista y un nuevo modelo de vista.</span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">jQuery UI es un proyecto derivado del proyecto jQuery y ofrece componentes de formulario, incluido un calendario. Este calendario puede ser localizado. Esto es lo que vamos a demostrar.</span></p>
+<p><span style="color: #000000">Para empezar, vamos a añadir [jQuery UI] a nuestro proyecto.</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036E000002C84CC5FEB9.png" style="display:inline-block; margin:4px;width:11.615cm;height:9.419cm;" class="odt-zoomable" data-zoom-src="images/100000000000036E000002C84CC5FEB9.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B70000014BF0AEC049.png" style="display:inline-block; margin:4px;width:15.968cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B70000014BF0AEC049.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Una vez instalado jQuery UI, aparecen nuevos elementos en el proyecto:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E10000014BD096A7F2.png" style="display:inline-block; margin:4px;width:13.137cm;height:4.38cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E10000014BD096A7F2.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">en [1], la biblioteca [JQuery UI] tanto en versión normal como minificada;</span>
+  </li>
+  <li><span style="color: #000000">en [2], la hoja de estilo [JQuery UI];</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El calendario jQuery UI está en inglés por defecto. Para internacionalizarlo, es necesario añadir los scripts que se encuentran en la sección URL [</span><a href="https://github.com/jquery/jquery-ui/tree/master/ui/i18n">https://github.com/jquery/jquery-ui/tree/master/ui/i18n</a><span style="color: #000000">]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000607000000B0116E25BF.png" style="display:inline-block; margin:4px;width:17.999cm;height:2.051cm;" class="odt-zoomable" data-zoom-src="images/1000000000000607000000B0116E25BF.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Para disponer del calendario jQuery UI en francés, copie el contenido del archivo [jquery.ui.datepicker-fr.js] anterior en la carpeta [Scripts] del proyecto.</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B00000147534A1B0D.png" style="display:inline-block; margin:4px;width:5.438cm;height:4.327cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B00000147534A1B0D.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El código de la nueva vista [Action15.cshtml] se obtiene copiando la vista anterior [Action14.cshtml] y modificándola a continuación. Sólo mostraremos los cambios:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015A000000AD293D7287.png" style="display:inline-block; margin:4px;width:4.577cm;height:2.29cm;" class="odt-zoomable" data-zoom-src="images/100000000000015A000000AD293D7287.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">@model Exemple_03.Models.<span style="color:#2b91af">ViewModel15</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>Exemple_03.Resources</span>
+<span class="odt-code-line"><span style="color:#0000ff">@using </span>System.Threading</span>
+<span class="odt-code-line">@{</span>
+<span class="odt-code-line">  Layout = <span style="color:#0000ff">null</span>;</span>
+<span class="odt-code-line">}</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;!</span><span style="color:#800000">DOCTYPE </span><span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">html </span><span style="color:#0000ff">lang=&quot;</span>@Model.Culture<span style="color:#0000ff">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">meta </span><span style="color:#0000ff">name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">title</span><span style="color:#0000ff">&gt;</span>Action15<span style="color:#0000ff">&lt;</span><span style="color:#800000">/title</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">link </span><span style="color:#0000ff">rel=&quot;stylesheet&quot; href=&quot;~/Content/themes/base/jquery-ui.css&quot; /&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery-ui-1.10.3.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script </span><span style="color:#0000ff">type=&quot;text/javascript&quot; src=&quot;~/Scripts/jquery.ui.datepicker-fr.js&quot;&gt;&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    $(document).ready(<span style="color:#0000ff">function </span>() {</span>
+<span class="odt-code-line">      <span style="color:#0000ff">var </span>culture = <span style="color:#2b91af">&#x27;@Thread</span>.CurrentThread.<span style="color:#a31515">CurrentCulture&#x27;</span>;</span>
+<span class="odt-code-line">      Globalize.culture(culture);</span>
+<span class="odt-code-line">      $(<span style="color:#a31515">&quot;#Date1&quot;</span>).datepicker($.datepicker.regional[&#x27;@Model.<span style="color:#a31515">Regionale&#x27;</span>]);</span>
+<span class="odt-code-line">    });</span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">/script</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/head</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">&lt;</span><span style="color:#800000">h3</span><span style="color:#0000ff">&gt;</span><span style="color:#2b91af">@MyResources</span>.title<span style="color:#0000ff">&lt;</span><span style="color:#800000">/h3</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Action15&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.LabelFor(m =&gt; m.Date1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.TextBox(<span style="color:#a31515">&quot;Date1&quot;</span>, Model.StrDate1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">          <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;</span>@Html.ValidationMessageFor(m =&gt; m.Date1)<span style="color:#0000ff">&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tbody</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">input </span><span style="color:#0000ff">type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/p</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">  <span style="color:#006400">&lt;!-- language selection --&gt;</span></span>
+<span class="odt-code-line">  <span style="color:#0000ff">@using </span>(Html.BeginForm(<span style="color:#a31515">&quot;Lang&quot;</span>, <span style="color:#a31515">&quot;Second&quot;</span>))</span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;fr-FR&#x27;,&#x27;/Second/Action15&#x27;)&quot;&gt;</span>French<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">&lt;</span><span style="color:#800000">td</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">a </span><span style="color:#0000ff">href=&quot;javascript:postForm(&#x27;en-US&#x27;,&#x27;/Second/Action15&#x27;)&quot;&gt;</span>English<span style="color:#0000ff">&lt;</span><span style="color:#800000">/a</span><span style="color:#0000ff">&gt;&lt;</span><span style="color:#800000">/td</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">&lt;</span><span style="color:#800000">/tr</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">&lt;</span><span style="color:#800000">/table</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/body</span><span style="color:#0000ff">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">&lt;</span><span style="color:#800000">/html</span><span style="color:#0000ff">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><strong><span style="color: #000000">Nota</span></strong><span style="color: #000000">: Línea 16, ajuste la versión jQuery UI para que coincida con la que ha descargado.</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">Línea 15: Referencia a la hoja de estilo jQuery UI;</span>
+  </li>
+  <li><span style="color: #000000">línea 16: referencia la versión descargada de jQuery UI;</span>
+  </li>
+  <li><span style="color: #000000">línea 17: referencia al script del calendario francés que acabamos de descargar;</span>
+  </li>
+  <li><span style="color: #000000">línea 34: el método [Html.TextBox] generará una etiqueta [input] aquí, de tipo [text], con id [Date1] y nombre [Date1];</span>
+  </li>
+  <li><span style="color: #000000">línea 19: cuando la página haya terminado de cargarse, la función jQuery UI [datepicker] se aplicará al elemento </span><b><span style="color: #000000">con id </span></b><span style="color: #000000">[Fecha1], i.e., el elemento de la línea 34. Esta función garantiza que cuando el usuario se centre en el campo de entrada [Date1], aparecerá un calendario que le permitirá seleccionar una fecha. La función [datepicker] acepta un parámetro que especifica el idioma del calendario. La variable [@Model.Regionale] debe tener el valor:</span>
+  </li>
+  <li><span style="color: #000000">&#x27;fr&#x27; for a French calendar,</span>
+  </li>
+  <li><span style="color: #000000">&#x27;&#x27; for an English calendar;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">El modelo de la vista anterior [Action15.cshtml] será el siguiente modelo [ViewModel15]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000149000001E31DFED8CA.png" style="display:inline-block; margin:4px;width:4.353cm;height:6.391cm;" class="odt-zoomable" data-zoom-src="images/1000000000000149000001E31DFED8CA.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Su código es el del modelo [ViewModel14], ligeramente modificado. Sólo mostramos los cambios:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<span class="odt-code-line"><span style="color:#0000ff">using </span>Exemple_03.Resources;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line"><span style="color:#0000ff">using </span>System.Web;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"><span style="color:#0000ff">namespace </span>Example_03.Models</span>
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">  [<span style="color:#2b91af">Bind</span>(Exclude = <span style="color:#a31515">&quot;Culture,Regionale,StrDate1,FormatDate&quot;</span>)]</span>
+<span class="odt-code-line">  <span style="color:#0000ff">public class </span><span style="color:#2b91af">ViewModel15 </span>: <span style="color:#2b91af">IValidatableObject</span></span>
+<span class="odt-code-line">  {</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;date1&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">RegularExpression</span>(<span style="color:#a31515">@&quot;\s*\d{2}/\d{2}/\d{4}\s*&quot;</span>, ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;Incorrect info&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Regexp1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Display</span>(ResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), Name = <span style="color:#a31515">&quot;date2&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">Required</span>(ErrorMessageResourceType = <span style="color:#0000ff">typeof</span>(<span style="color:#2b91af">MyResources</span>), ErrorMessageResourceName = <span style="color:#a31515">&quot;infoRequired&quot;</span>)]</span>
+<span class="odt-code-line">    [<span style="color:#2b91af">DataType</span>(<span style="color:#2b91af">DataType</span>.Date)]</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">DateTime </span>Date1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#008000">// constructor</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span>ViewModel15()</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// Current culture</span></span>
+<span class="odt-code-line">      Culture = <span style="color:#2b91af">HttpContext</span>.Current.Session[<span style="color:#a31515">&quot;lang&quot;</span>] <span style="color:#0000ff">as string</span>;</span>
+<span class="odt-code-line">      cultureInfo = <span style="color:#0000ff">new </span><span style="color:#2b91af">CultureInfo</span>(Culture);</span>
+<span class="odt-code-line">      <span style="color:#008000">// JQuery calendar region</span></span>
+<span class="odt-code-line">      Regional = <span style="color:#2b91af">MyResources</span>.ResourceManager.GetObject(<span style="color:#a31515">&quot;regionale&quot;</span>, cultureInfo).ToString();</span>
+<span class="odt-code-line">      <span style="color:#008000">// Date format</span></span>
+<span class="odt-code-line">      FormatDate = <span style="color:#2b91af">MyResources</span>.ResourceManager.GetObject(<span style="color:#a31515">&quot;formatDate&quot;</span>, cultureInfo).ToString();</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#008000">// Validation</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public </span><span style="color:#2b91af">IEnumerable</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; Validate(<span style="color:#2b91af">ValidationContext </span>validationContext)</span>
+<span class="odt-code-line">    {</span>
+<span class="odt-code-line">      <span style="color:#008000">// list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt; results = <span style="color:#0000ff">new </span><span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">ValidationResult</span>&gt;();</span>
+<span class="odt-code-line">      <span style="color:#008000">// same error message for all</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">string </span>errorMessage = <span style="color:#2b91af">MyResources</span>.ResourceManager.GetObject(<span style="color:#a31515">&quot;infoIncorrecte&quot;</span>, cultureInfo).ToString();</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">      <span style="color:#008000">// Regexp1</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">try</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#2b91af">DateTime</span>.ParseExact(Regexp1, FormatDate, cultureInfo);</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line">      <span style="color:#0000ff">catch</span></span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        results.Add(<span style="color:#0000ff">new </span><span style="color:#2b91af">ValidationResult</span>(errorMessage, <span style="color:#0000ff">new string</span>[] { <span style="color:#a31515">&quot;Regexp1&quot; </span>}));</span>
+<span class="odt-code-line">      }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">      <span style="color:#008000">// return the list of errors</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">return </span>results;</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#008000">// fields outside the action model</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Culture { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>Regional { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>StrDate1 { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line">    <span style="color:#0000ff">public string </span>DateFormat { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">    <span style="color:#008000">// local data</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">private </span><span style="color:#2b91af">CultureInfo </span>cultureInfo;</span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">En comparación con el modelo anterior [ViewModel14], tenemos cuatro propiedades adicionales:</span></p>
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">línea 60: la configuración regional de la vista, &#x27;fr-FR&#x27; o &#x27;en-US&#x27;. Esta configuración regional se inicializa en el constructor de la línea 26;</span>
+  </li>
+  <li><span style="color: #000000">línea 61: la cultura regional del calendario jQuery, &#x27;fr&#x27; para un calendario francés, &#x27;&#x27; para un calendario inglés. Este campo se inicializa en la línea 29 del constructor;</span>
+  </li>
+  <li><span style="color: #000000">línea 63: el formato de fecha de la línea 15: &#x27;dd/MM/yyyy&#x27; para una fecha francesa, &#x27;MM/dd/yyyy&#x27; para una fecha inglesa. Este campo se inicializa en la línea 31 del constructor;</span>
+  </li>
+  <li><span style="color: #000000">línea 62: la cadena a mostrar en el campo de entrada [Fecha1]. Este campo será inicializado por la acción;</span>
+  </li>
+  <li><span style="color: #000000">línea 47: la fecha [Regexp1] se valida ahora según el formato de la configuración regional actual.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Los valores de las propiedades [Regionale] y [FormatDate] se encuentran en los archivos de recursos [MyResources]. Los archivos de recursos en francés [MyResources] [MyResources.fr-FR] [1] y el archivo de recursos en inglés [2] cambian de la siguiente manera:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062F00000078EB3A38F2.png" style="display:inline-block; margin:4px;width:17.999cm;height:1.363cm;" class="odt-zoomable" data-zoom-src="images/100000000000062F00000078EB3A38F2.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Ya estamos casi listos. Añadimos una acción [Action15] al controlador [SecondController]:</span></p>
+<p><span style="color: #000000"> </span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">      <span style="color:#008000">// Action15</span></span>
+<span class="odt-code-line">      <span style="color:#0000ff">public </span><span style="color:#2b91af">ViewResult </span>Action15(<span style="color:#2b91af">FormCollection </span>formData)</span>
+<span class="odt-code-line">      {</span>
+<span class="odt-code-line">        <span style="color:#008000">// HTTP method</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">string </span>method = Request.HttpMethod.ToLower();</span>
+<span class="odt-code-line">        <span style="color:#008000">// model</span></span>
+<span class="odt-code-line">        <span style="color:#2b91af">ViewModel15 </span>model = <span style="color:#0000ff">new </span><span style="color:#2b91af">ViewModel15</span>();</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>(method == <span style="color:#a31515">&quot;get&quot;</span>)</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">          model.StrDate1 = <span style="color:#a31515">&quot;&quot;</span>;</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#0000ff">else</span></span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">          TryUpdateModel(model, formData);</span>
+<span class="odt-code-line">          model.StrDate1 = model.Date1.ToString(model.FormatDate);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">        <span style="color:#008000">// display view</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>View(<span style="color:#a31515">&quot;Action15&quot;</span>, model);</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">Línea 2: El método [Action15] gestiona tanto las peticiones [GET] como [POST]. En este último caso, los valores contabilizados se recuperan en el parámetro [formData];</span>
+  </li>
+  <li><span style="color: #000000">línea 5: se recupera el método HTTP de la solicitud;</span>
+  </li>
+  <li><span style="color: #000000">línea 7: se crea la plantilla de vista que se mostrará (el formulario);</span>
+  </li>
+  <li><span style="color: #000000">líneas 8-11: en el caso de una solicitud [GET], el campo de entrada [Date1] se inicializa con una cadena vacía;</span>
+  </li>
+  <li><span style="color: #000000">líneas 12-16: en el caso de una solicitud [POST]:</span>
+    <ul>
+      <li><span style="color: #000000">línea 14: el modelo se inicializa con los valores publicados,</span>
+      </li>
+      <li><span style="color: #000000">línea 15: el campo de entrada [Fecha1] se inicializa con una cadena que es el valor de [Fecha1] formateado según la configuración regional actual [dd/MM/aaaa] para una fecha en francés, [MM/dd/aaaa] para una fecha en inglés;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">línea 18: la vista [Action15.cshtml] se muestra con su plantilla.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000"> </span></p>
+<p><span style="color: #000000">Hagamos algunas pruebas:</span></p>
+<p><span style="color: #000000"> </span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000634000001D3059F9786.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.293cm;" class="odt-zoomable" data-zoom-src="images/1000000000000634000001D3059F9786.png" /></td></tr></table>
+
+<p><span style="color: #000000"> </span></p>
+<ul>
+  <li><span style="color: #000000">en [1], un calendario francés cuando la página está en francés;</span>
+  </li>
+  <li><span style="color: #000000">en [2], un calendario en inglés cuando la página está en inglés;</span>
+  </li>
+  <li><span style="color: #000000">en [3], una fecha en formato francés cuando la página está en francés;</span>
+  </li>
+  <li><span style="color: #000000">en [4], la misma fecha en formato inglés cuando la página está en inglés;</span>
+  </li>
+</ul>
+
+<p><a id="refheading58156676630786"></a></p>
+<h2 id="67-conclusion">6.7. Conclusión</h2>
+<p><span style="color: #000000">Como vemos, el tema de la internacionalización de aplicaciones es complejo...</span></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        Este curso-tutorial escrito por <strong>Serge Tahé</strong> se pone a disposición del público según los términos de la
+        <em>Licencia Creative Commons Reconocimiento – Sin uso comercial –
+        Compartir en las mismas condiciones 3.0 no adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
