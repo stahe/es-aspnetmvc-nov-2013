@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://stahe.github.io/es-aspnetmvc-nov-2013/conclusion-provisional.html">
       
       
-        <link rel="prev" href="ajaxificacion-de-una-aplicacion-aspnet.html">
+        <link rel="prev" href="ajaxificacion-de-una-aplicacion-aspnet-mvc.html">
       
       
-        <link rel="next" href="estudio-de-caso.html">
+        <link rel="next" href="caso-practico.html">
       
       
         
@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="fundamentos-de-la-programacion-web.html" class="md-nav__link">
+      <a href="conceptos-basicos-de-la-programacion-web.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Fundamentos de la programación web
+    2. Conceptos básicos de la programación web
   
 
     
@@ -364,7 +364,7 @@
   <span class="md-ellipsis">
     
   
-    3. Controladores, Acciones, Enrutamiento
+    3. Controladores, acciones, enrutamiento
   
 
     
@@ -438,14 +438,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ver-internacionalizacion.html" class="md-nav__link">
+      <a href="internacionalizacion-de-vistas.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Ver Internacionalización
+    6. Internacionalización de vistas
   
 
     
@@ -465,14 +465,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ajaxificacion-de-una-aplicacion-aspnet.html" class="md-nav__link">
+      <a href="ajaxificacion-de-una-aplicacion-aspnet-mvc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    7. Ajaxificación de una aplicación ASP.NET
+    7. Ajaxificación de una aplicación ASP.NET MVC
   
 
     
@@ -529,14 +529,14 @@
   
   
     <li class="md-nav__item">
-      <a href="estudio-de-caso.html" class="md-nav__link">
+      <a href="caso-practico.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Estudio de caso
+    9. Caso práctico
   
 
     
@@ -624,135 +624,22 @@
 
 
 <p><a id="refheading1240912030931382"></a></p>
-<h1 id="8-conclusion-provisional">8. Conclusión provisional</h1>
-<p>Con esto concluye la visión general del marco ASP.NET MVC. Continuaremos con un caso práctico que ilustra el uso de este marco en una arquitectura por capas:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E30000013CE2749EC1.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.773cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E30000013CE2749EC1.png" /></td></tr></table>
+<h1 id="8-conclusion-provisional">8. <span style="color: #365f91">Conclusión provisional</span></h1>
+<p>Con esto concluye la descripción general del marco ASP.NET MVC. Continuaremos con un caso práctico que ilustra el uso de este marco en una arquitectura por capas:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005E30000013CE2749EC1.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.775cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E30000013CE2749EC1.png" /></td></tr></table>
 
 <ul>
-  <li>El [<b>Web</b>la capa [...] es la capa en contacto con el usuario de la aplicación web. El usuario interactúa con la aplicación web a través de páginas web mostradas por un navegador. <b>ASP.NET MVC reside en esta capa y sólo en esta capa</b>.
+  <li>La capa [<b>Web</b>] es la capa que está en contacto con el usuario de la aplicación web. El usuario interactúa con la aplicación web a través de páginas web mostradas por un navegador. <b>ASP.NET MVC reside en esta capa y solo en esta capa</b>.
   </li>
-  <li>El [<b>empresa</b>la capa [DAO] implementa la lógica de negocio de la aplicación, como el cálculo de un salario o una factura. Esta capa utiliza datos del usuario a través de la capa [Web] y del DBMS a través de la capa [DAO].
+  <li>La capa [<b>de negocio</b>] implementa la lógica de negocio de la aplicación, como el cálculo de un salario o una factura. Esta capa utiliza datos del usuario a través de la capa [Web] y del SGBD a través de la capa [DAO].
   </li>
-  <li>El [<b>DAO</b>(objetos de acceso a datos), la capa [<b>ORM</b>] (Object Relational Mapper), y el conector ADO.NET gestiona el acceso a los datos en la capa DBMS. La capa [<b>ORM</b>actúa como puente entre los objetos manejados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Utilizaremos la capa <b>Marco de entidades </b>ORM (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx">http://msdn.microsoft.com/en-us/data/ef.aspx</a>).
+  <li>La capa [<b>DAO</b>] (objetos de acceso a datos), la capa [<b>ORM</b>] (mapeador relacional de objetos) y el conector ADO.NET gestionan el acceso a los datos en el SGBD. La capa [<b>ORM</b>] actúa como puente entre los objetos gestionados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Utilizaremos el ORM<b> Entity Framework </b>(<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1">http://msdn.microsoft.com/en-us/data/ef.aspx</span></u></a>).
   </li>
-  <li>La integración de las capas puede lograrse utilizando un contenedor de inyección de dependencias. Utilizaremos <b>Spring.net </b>(<a href="http://www.springframework.net/">http://www.springframework.net/</a>).
+  <li>La integración de las capas se puede lograr utilizando un contenedor de inyección de dependencias. Utilizaremos <b>Spring.net </b>(<a href="http://www.springframework.net/"><u><span style="color: #0563c1">http://www.springframework.net/</span></u></a>).
   </li>
 </ul>
 
-<p>Aunque este documento ya es bastante extenso, está incompleto. Los lectores pueden complementar su aprendizaje con el libro &quot;<strong>Pro</strong> <strong><span style="color: #000000">ASP.NET MVC 4</span></strong>&quot; por <strong>Adam Freeman</strong>, publicado por <strong>Apress</strong>. Es un libro excelente. Sus 800 páginas satisfarán incluso a los lectores más exigentes.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C8000000E930F662D2.png" style="display:inline-block; margin:4px;width:2.646cm;height:3.083cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C8000000E930F662D2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C8000000E90F858128.png" style="display:inline-block; margin:4px;width:2.646cm;height:3.083cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C8000000E90F858128.png" /></td></tr></table>
-
-<p>Introducción a ASP.NET MVC a través de ejemplos</p>
-<p><strong>Serge Tahé</strong>, Noviembre de 2013</p>
-<hr style="border:0; border-top:0.26pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p><a href="https://stahe.github.io/word-odt-vers-html-janv-2026/">Este sitio fue creado utilizando el conversor [Word o ODT → HTML] desarrollado por los sistemas AI Gemini 3 y ChatGPT 5.2 en enero de 2026</a>.</p>
-<hr style="border:0; border-top:0.26pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>Utilizando el conversor Gemini/ChatGPT, se han generado varias páginas web a partir de documentos LibreOffice ODT y documentos Word:</p>
-<p><u><strong>Java</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/java-sept-1998/">Introducción al lenguaje Java (1998)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/servlets-java-juin-2002/">Introducción a la programación Web en Java con Servlets y Páginas JSP (2002)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/struts1x-dec-2003/">Introducción a Struts 1.x a través de ejemplos (2003)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/java-web-mvc-mai-2006/">Los fundamentos del MVC Desarrollo web en Java a través de ejemplos (2006)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/jpa-juin-2007/">Java 5 Persistence a través de la práctica (2007)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/webservice-netbeans-glassfish-fev-2009/">Creación de un servicio web Java EE con el NetBeans 6.5 IDE y el GlassFish servidor Java EE (2009)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/struts2-janv-2012/">Introducción a Struts 2 con ejemplos (2012)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/jsf2-pf-pfm-juin-2012/">Introducción a Java Server Faces, PrimeFaces, y PrimeFaces Mobile con Ejemplos (2012)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/javaee-juin-2012/">Introducción a Java EE con el NetBeans IDE y el Servidor de Aplicaciones GlassFish (2012)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/spring-angular1.x-juillet-2014/">Un ejemplo cliente/servidor - AngularJS 1.x / Spring 4 (2014)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/java-spring-dec-2015/">Introducción al lenguaje Java y al ecosistema Spring a través de un caso práctico (2015)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/springmvc-thymeleaf-janv-2015/">Introducción a Spring MVC y Thymeleaf a través de ejemplos (2015)</a>]
-  </li>
-  <li>[<a href="https://stahe.github.io/spring-database-juin-2015/">Trabajar con una base de datos relacional utilizando el ecosistema Spring (2015)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/rxjava-mai-2016/">Introducción a RxJava. Aplicación a entornos Swing y Android (2016)</a>];
-  </li>
-</ul>
-
-<p><u><strong>Android</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/android-aout-2016/">Introducción a la programación de tabletas Android con Android Studio (2016)</a>];
-  </li>
-</ul>
-
-<p><u><strong>.NET</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/vbnet-mars-2004/">Introducción a VB.NET a través de ejemplos (2004)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/aspnet1.1-avril-2004/">Desarrollo web con ASP.NET 1.1 (2004)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/springioc-dotnet-avril-2005/">Primavera IoC para .NET (2005)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/web3tier-dotnet-avril-2005/">Creación de una aplicación Web de tres niveles con Spring.NET y VB.NET (2005)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/csharp-mai-2008/">Aprender C# Versión 3.0 con el .NET Framework 3.5 (2008)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/pam-aspnet-juin-2010/">Creación de una aplicación web de tres niveles con ASP.NET 2.0, C#, Spring.NET y NHibernate (2010)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/nhibernate-dotnet-dec-2011/">Introducción al marco NHibernate para la plataforma .NET (2011)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/ef5cf-oct-2012/">Introducción a Entity Framework 5 Code First a través de ejemplos (2012)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/aspnetmvc-nov-2013/">Introducción al marco ASP.NET MVC a través de ejemplos (2013)</a>];
-  </li>
-</ul>
-
-<p><u><strong>JavaScript</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/spring-angular1.x-juillet-2014/">Un ejemplo cliente/servidor - AngularJS 1.x / Spring 4 (2014)</a> ];
-  </li>
-  <li>[<a href="https://stahe.github.io/ecmascript6-oct-2019/">Introducción al lenguaje ECMAScript 6 a través de ejemplos (2019)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/vuejs-oct-2019/">Introducción al marco VUE.JS a través de ejemplos (2019)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/nuxtjs-dec-2019/">Introducción al marco NUXT.JS a través de ejemplos (2019)</a>];
-  </li>
-</ul>
-
-<p><u><strong>PHP</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/php4mvc-janvier-2004/">MVC Metodología de desarrollo de una aplicación Web PHP4 (2004)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/php5-juillet-2011/">Introducción al lenguaje PHP5 a través de ejemplos (2011)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/php7-juillet-2019/">Introducción al lenguaje PHP7 a través de ejemplos (2019)</a>];
-  </li>
-</ul>
-
-<p><u><strong>Python</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/python2.7-mars-2012/">Introducción a Python 2.7 a través de ejemplos (2012)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/python-flask-sept-2020/">Introducción al lenguaje Python y al framework web Flask a través de ejemplos (2020)</a>];
-  </li>
-  <li>[<a href="https://stahe.github.io/python-ia-sept-2025/">Generar un script Python utilizando las herramientas AI (2025)</a>];
-  </li>
-</ul>
-
-<p><u><strong>VBScript</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/vbscript-janv-2002/">Introducción a VBScript (2002)</a>];
-  </li>
-</ul>
-
-<p><u><strong>SQL</strong></u></p>
-<ul>
-  <li>[<a href="https://stahe.github.io/sql-firebird-janv-2006/">Introducción al lenguaje SQL con el DBMS Firebird (2006)</a>];
-  </li>
-</ul>
-
-<p>Todos ellos son cursos antiguos que constan de varios cientos de páginas. El tamaño del documento ODT o DOCX no importa al convertidor Gemini/ChatGPT. Lo que le importa son las estructuras que se encuentran en ellos (véase el capítulo:  <a href="https://stahe.github.io/word-odt-vers-html-janv-2026/les-exemples-de-ce-document.html">Ejemplos en este documento</a>).</p>
+<p>Aunque este documento ya es bastante extenso, está incompleto. Los lectores pueden complementar su aprendizaje con el libro <strong>«Pro</strong> <strong><span style="color: #000000">ASP.NET MVC</span></strong> 4», de <strong>Adam Freeman</strong>, publicado por <strong>Apress</strong>. Es un libro excelente. Sus 800 páginas satisfarán incluso a los lectores más exigentes.</p>
 
 
 
@@ -788,8 +675,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.gihub.io" target="_blank">
+          https://stahe.gihub.io
         </a>
         <br>
         Este curso-tutorial escrito por <strong>Serge Tahé</strong> se pone a disposición del público según los términos de la

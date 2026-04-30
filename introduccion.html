@@ -18,7 +18,7 @@
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="fundamentos-de-la-programacion-web.html">
+        <link rel="next" href="conceptos-basicos-de-la-programacion-web.html">
       
       
         
@@ -366,7 +366,7 @@
   <a href="#11-el-papel-de-aspnet-mvc-en-una-aplicacion-web" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1. El papel de ASP.NET MVC en una aplicación Web
+        1.1. El papel de ASP.NET MVC en una aplicación web
       
     </span>
   </a>
@@ -374,10 +374,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-el-modelo-de-desarrollo-aspnet" class="md-nav__link">
+  <a href="#12-el-modelo-de-desarrollo-aspnet-mvc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2. El modelo de desarrollo ASP.NET
+        1.2. El modelo de desarrollo ASP.NET MVC
       
     </span>
   </a>
@@ -421,14 +421,14 @@
   
   
     <li class="md-nav__item">
-      <a href="fundamentos-de-la-programacion-web.html" class="md-nav__link">
+      <a href="conceptos-basicos-de-la-programacion-web.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Fundamentos de la programación web
+    2. Conceptos básicos de la programación web
   
 
     
@@ -455,7 +455,7 @@
   <span class="md-ellipsis">
     
   
-    3. Controladores, Acciones, Enrutamiento
+    3. Controladores, acciones, enrutamiento
   
 
     
@@ -529,14 +529,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ver-internacionalizacion.html" class="md-nav__link">
+      <a href="internacionalizacion-de-vistas.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. Ver Internacionalización
+    6. Internacionalización de vistas
   
 
     
@@ -556,14 +556,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ajaxificacion-de-una-aplicacion-aspnet.html" class="md-nav__link">
+      <a href="ajaxificacion-de-una-aplicacion-aspnet-mvc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    7. Ajaxificación de una aplicación ASP.NET
+    7. Ajaxificación de una aplicación ASP.NET MVC
   
 
     
@@ -610,14 +610,14 @@
   
   
     <li class="md-nav__item">
-      <a href="estudio-de-caso.html" class="md-nav__link">
+      <a href="caso-practico.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Estudio de caso
+    9. Caso práctico
   
 
     
@@ -705,138 +705,145 @@
 
 
 <p><a id="refheading1882601168461456"></a></p>
-<h1 id="1-introduccion">1. Introducción</h1>
-<p>El PDF de este documento está disponible |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBvzwT_Kes9RYrEXGIAtVR_ASQCInf8AV954WMEnQUkVto?e=nDsCCH">AQUÍ</a>|.</p>
-<p>Los ejemplos de este documento están disponibles en |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=bxYSux">AQUÍ</a>|.</p>
-<p>Aquí pretendemos introducir, a través de ejemplos, los conceptos clave de ASP.NET MVC, un framework web .NET que proporciona un marco para el desarrollo de aplicaciones web según el patrón MVC (Modelo-Vista-Controlador).</p>
-<p>La comprensión de los ejemplos de este documento requiere pocos requisitos previos. Sólo son necesarios conocimientos básicos del lenguaje C#. Esto se puede encontrar en el documento <strong>Introducción al lenguaje C</strong> en el URL [<a href="http://tahe.developpez.com/dotnet/csharp">http://tahe.developpez.com/dotnet/csharp</a>]. Un caso este estudio permite poner en práctica los conocimientos adquiridos sobre ASP.NET MVC. Utiliza el ORM (Object-Relational Mapper) de Entity Framework. Este ORM se presenta en el documento <strong>Introducción a Entity Framework 5 Code First</strong>, disponible en [<a href="http://tahe.developpez.com/dotnet/ef5cf">http://tahe.developpez.com/dotnet/ef5cf</a>].</p>
-<p>Los distintos ejemplos de este documento están disponibles en el URL [<a href="http://tahe.developpez.com/dotnet/aspnet-mvc">http://tahe.developpez.com/dotnet/aspnetmvc</a>] como descarga <em>ZIP</em> archivo.</p>
-<p>Este documento está incompleto en muchos aspectos. Para obtener más información sobre ASP.NET MVC, puede utilizar las siguientes referencias:</p>
+<h1 id="1-introduccion">1. <span style="color: #365f91">Introducción</span></h1>
+<p>El PDF de este documento está disponible |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQCNjYnfila_So3N1MMe0lTpAe7ZMy71odHPQG_uobsqJWo?e=8n7w0c">AQUÍ</a>|.</p>
+<p>Los ejemplos de este documento están disponibles |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCKNeWRQFCfSqwnA6RDUJ7yAd9qZkIe89vFgFNJvCBIS6o?e=I2EVl7">AQUÍ</a>|.</p>
+<p>En este documento, nuestro objetivo es presentar, a través de ejemplos, los conceptos clave de ASP.NET MVC, un marco web de .NET que proporciona un entorno para desarrollar aplicaciones web según el patrón MVC (Modelo-Vista-Controlador).</p>
+<p>Para comprender los ejemplos de este documento se requieren pocos requisitos previos. Solo es necesario tener conocimientos básicos del lenguaje C#. Estos se pueden encontrar en el documento <strong>Introducción al lenguaje C#,</strong> en la URL [<a href="http://tahe.developpez.com/dotnet/csharp"><u><span style="color: #0563c1">http://tahe.developpez.com/dotnet/csharp</span></u></a>]. Se proporciona un caso práctico para poner en práctica los conocimientos adquiridos sobre ASP.NET MVC. Utiliza el ORM (mapeador objeto-relacional) Entity Framework. Este ORM se presenta en el documento <strong>Introducción a Entity Framework 5 Code First</strong>, disponible en [<a href="http://tahe.developpez.com/dotnet/ef5cf"><u><span style="color: #0563c1">http://tahe.developpez.com/dotnet/ef5cf</span></u></a>].</p>
+<p>Los diversos ejemplos de este documento están disponibles en la URL [<a href="http://tahe.developpez.com/dotnet/aspnet-mvc"><u><span style="color: #0563c1">http://tahe.developpez.com/dotnet/aspnetmvc</span></u></a>] como un archivo <em>ZIP</em> descargable.</p>
+<p>Este documento está incompleto en muchos aspectos. Para obtener más información sobre ASP.NET MVC, puede consultar las siguientes referencias:</p>
 <ul>
-<li><strong>[ref1]</strong>: el libro &quot;<strong>Pro</strong> <strong><span style="color: #000000">ASP.NET MVC 4</span></strong>&quot;escrito por <strong>Adam Freeman</strong> y publicado por <strong>Apress</strong>. Es un libro excelente. Si estuviera disponible en línea de forma gratuita y en francés, este documento sería innecesario. Recomiendo a quien pueda hacerlo que aprenda ASP.NET MVC utilizando este libro. El código fuente de los ejemplos del libro está disponible gratuitamente en [<a href="http://www.apress.com/9781430242369">http://www.apress.com/9781430242369</a>];</li>
-<li><strong>[ref2]</strong>: el sitio web del marco [<a href="http://www.asp.net/mvc">http://www.asp.net/mvc</a>]. Allí encontrará todo el material necesario para el autoaprendizaje. Una versión francesa está disponible en el URL [<a href="http://dotnet.developpez.com/mvc/">http://dotnet.developpez.com/mvc/</a>];</li>
-<li>el sitio web [developpez.com] dedicado a ASP.NET [<a href="http://dotnet.developpez.com/aspnet/">http://dotnet.developpez.com/aspnet/</a> ].</li>
+  <li><b>[ref1]</b>: el libro <b>«Pro </b><b><span style="color: #000000">ASP.NET MVC</span></b> 4», escrito por <b>Adam Freeman </b>y publicado por <b>Apress</b>. Es un libro excelente. Si estuviera disponible en línea de forma gratuita y en francés, este documento sería innecesario. Recomiendo a todo aquel que pueda hacerlo que aprenda ASP.NET MVC utilizando este libro. El código fuente de los ejemplos del libro está disponible de forma gratuita en [<a href="http://www.apress.com/9781430242369"><u><span style="color: #0563c1">http://www.apress.com/9781430242369</span></u></a>];
+  </li>
+  <li><b>[ref2]</b>: el sitio web del framework [<a href="http://www.asp.net/mvc"><u><span style="color: #0563c1">http://www.asp.net/mvc</span></u></a>]. Allí encontrarás todo el material necesario para el autoaprendizaje. Hay una versión en francés disponible en la URL [<a href="http://dotnet.developpez.com/mvc/"><u><span style="color: #0563c1">http://dotnet.developpez.com/mvc/</span></u></a>];
+  </li>
+  <li>el sitio web [developpez.com] dedicado a ASP.NET [<a href="http://dotnet.developpez.com/aspnet/"><u><span style="color: #0563c1">http://dotnet.developpez.com/aspnet/</span></u></a> ].
+  </li>
 </ul>
-<p>Este documento se ha redactado para que pueda leerse sin tener un ordenador a mano. Por ello, se incluyen muchas capturas de pantalla.</p>
+
+<p>Este documento se ha redactado de manera que pueda leerse sin necesidad de tener un ordenador a mano. Por ello, se incluyen numerosas capturas de pantalla.</p>
 <p><a id="refheading99511454977699"></a></p>
-<h2 id="11-el-papel-de-aspnet-mvc-en-una-aplicacion-web">1.1. El papel de ASP.NET MVC en una aplicación Web</h2>
-<p>En primer lugar, situemos ASP.NET MVC dentro del desarrollo de una aplicación web. Lo más habitual es que se construya sobre una arquitectura multicapa como la siguiente:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D8000001C76DFA2B2A.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000001C76DFA2B2A.png" /></td></tr></table>
+<h2 id="11-el-papel-de-aspnet-mvc-en-una-aplicacion-web">1.1. <span style="color: #4f81bd">El papel de ASP.NET MVC en una aplicación web</span></h2>
+<p>En primer lugar, situemos ASP.NET MVC en el contexto del desarrollo de una aplicación web. Por lo general, se basará en una arquitectura de varias capas como la siguiente:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D8000001C76DFA2B2A.png" width="680" height="154" style="display:inline-block; margin:4px;width:17.999cm;height:4.078cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000001C76DFA2B2A.png" /></td></tr></table>
 
 <ul>
-<li>el [<strong>Web</strong>la capa [...] es la capa en contacto con el usuario de la aplicación web. El usuario interactúa con la aplicación web a través de páginas web mostradas por un navegador. <strong>Es en esta capa donde ASP.NET MVC reside, y sólo en esta capa;</strong></li>
-<li>el [<strong>empresa</strong>la capa [DAO] implementa la lógica de negocio de la aplicación, como el cálculo de un salario o una factura. Esta capa utiliza datos del usuario a través de la capa [Web] y del DBMS a través de la capa [DAO];</li>
-<li>El [<strong>DAO</strong>(Objetos de acceso a datos), la capa [<strong>ORM</strong>] (Object Relational Mapper), y el conector ADO.NET gestiona el acceso a los datos en la capa DBMS. La capa [<strong>ORM</strong>actúa como puente entre los objetos manejados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Dos ORMs se utilizan habitualmente en el mundo .NET: <strong>NHibernate</strong> (<a href="http://sourceforge.net/projects/nhibernate/">http://sourceforge.net/projects/nhibernate/</a>) y <strong>Marco de entidades</strong> (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx">http://msdn.microsoft.com/en-us/data/ef.aspx</a>);</li>
-<li>la integración de estas capas puede lograrse utilizando un contenedor de inyección de dependencias como Spring (<a href="http://www.springframework.net/">http://www.springframework.net/</a>);</li>
+  <li>la capa [<b>Web</b>] es la capa que está en contacto con el usuario de la aplicación web. El usuario interactúa con la aplicación web a través de páginas web mostradas por un navegador. <b>Es en esta capa donde reside ASP.NET MVC, y solo en esta capa;</b>
+  </li>
+  <li>la capa [<b>business</b>] implementa la lógica de negocio de la aplicación, como el cálculo de un salario o una factura. Esta capa utiliza datos del usuario a través de la capa [Web] y del SGBD a través de la capa [DAO];
+  </li>
+  <li>La capa [<b>DAO</b>] (Data Access Objects), la capa [<b>ORM</b>] (Object Relational Mapper) y el conector ADO.NET gestionan el acceso a los datos del SGBD. La capa [<b>ORM</b>] actúa como puente entre los objetos gestionados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. En el mundo .NET se utilizan habitualmente dos ORM: <b>NHibernate </b>(<a href="http://sourceforge.net/projects/nhibernate/"><u><span style="color: #0563c1">http://sourceforge.net/projects/nhibernate/</span></u></a>) y <b>Entity Framework </b>(<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1">http://msdn.microsoft.com/en-us/data/ef.aspx</span></u></a>);
+  </li>
+  <li>la integración de estas capas se puede lograr utilizando un contenedor de inyección de dependencias como Spring (<a href="http://www.springframework.net/"><u><span style="color: #0563c1">http://www.springframework.net/</span></u></a>);
+  </li>
 </ul>
-<p>La mayoría de los ejemplos que se ofrecen a continuación utilizarán una sola capa, la capa [Web]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002CB000001344402A749.png" style="display:inline-block; margin:4px;width:6.62cm;height:2.85cm;" class="odt-zoomable" data-zoom-src="images/10000000000002CB000001344402A749.png" /></td></tr></table>
 
-<p>Sin embargo, este documento concluirá con la construcción de una aplicación web multicapa:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E50000018DC284155D.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E50000018DC284155D.png" /></td></tr></table>
+<p>La mayoría de los ejemplos que se proporcionan a continuación utilizarán solo una única capa, la capa [Web]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002CB000001344402A749.png" width="250" height="108" style="display:inline-block; margin:4px;width:6.62cm;height:2.852cm;" class="odt-zoomable" data-zoom-src="images/10000000000002CB000001344402A749.png" /></td></tr></table>
+
+<p>No obstante, este documento concluirá con la construcción de una aplicación web de varias capas:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007E50000018DC284155D.png" width="680" height="134" style="display:inline-block; margin:4px;width:17.999cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000007E50000018DC284155D.png" /></td></tr></table>
 
 <p><a id="refheading99531454977699"></a></p>
-<h2 id="12-el-modelo-de-desarrollo-aspnet">1.2. El modelo de desarrollo ASP.NET</h2>
+<h2 id="12-el-modelo-de-desarrollo-aspnet-mvc">1.2. <span style="color: #4f81bd">El modelo de desarrollo ASP.NET MVC</span></h2>
 <p>ASP.NET MVC implementa el patrón arquitectónico MVC (Modelo-Vista-Controlador) de la siguiente manera:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000718000002334AE9A6E1.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.579cm;" class="odt-zoomable" data-zoom-src="images/1000000000000718000002334AE9A6E1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000718000002334AE9A6E1.png" width="680" height="211" style="display:inline-block; margin:4px;width:17.999cm;height:5.579cm;" class="odt-zoomable" data-zoom-src="images/1000000000000718000002334AE9A6E1.png" /></td></tr></table>
 
-<p>La tramitación de una solicitud de cliente procede del siguiente modo:</p>
+<p>El procesamiento de una solicitud del cliente se lleva a cabo de la siguiente manera:</p>
 <ol>
-<li><strong>solicitar</strong> - los URLs solicitados tienen la forma <em>http://machine:port/contexte/Controlleur/Action/param1/param2/....?p1=v1&amp;p2=v2&amp;...</em> El [Controlador frontal] utiliza un archivo de configuración para &quot;dirigir&quot; la solicitud al controlador correcto y a la acción correcta dentro de ese controlador. Para ello, utiliza el archivo de configuración [<em>Controlador/Acción</em>] del URL. El resto del URL [<em>/param1/param2/...</em>consta de parámetros opcionales que se pasarán a la acción. La dirección <strong>&quot;C&quot;</strong> en MVC aquí se refiere a la cadena [Controlador frontal, Controlador, Acción]. Si la cadena [<em>Controlador/Acción</em>no conduce a un controlador o acción existente, el servidor web responderá que no se ha encontrado el URL solicitado.</li>
-</ol>
-<ol start="2">
-  <li>procesamiento
+  <li><b>solicitud</b>: las URL solicitadas tienen el formato<i> http://machine:port/contexte/Controlleur/Action/param1/param2/....?p1=v1&amp;p2=v2&amp;... </i>El [Front Controller] utiliza un archivo de configuración para «enrutar» la solicitud al controlador correcto y a la acción correcta dentro de ese controlador. Para ello, utiliza la ruta [<i>Controller/Action</i>] de la URL. El resto de la URL [<i>/param1/param2/...</i>] consta de parámetros opcionales que se pasarán a la acción. La <b>«C» </b>de MVC se refiere aquí a la cadena [Front Controller, Controller, Action]. Si la ruta [<i>Controller/Action</i>] no conduce a un controlador o acción existentes, el servidor web responderá que no se ha encontrado la URL solicitada.
+  </li>
+  <li>Procesamiento
   </li>
 </ol>
 <ul>
-  <li>La acción seleccionada puede utilizar los parámetros que el [Front Controller] le ha pasado. Estos pueden provenir de varias fuentes:
+  <li>La acción seleccionada puede utilizar los parámetros que le ha pasado el [controlador frontal]. Estos pueden provenir de varias fuentes:
   </li>
-  <li>el [<i>/param1/param2/...</i>] del URL,
+  <li>la ruta [<i>/param1/param2/...</i>] de la URL,
   </li>
-  <li>el [<i>p1=v1&amp;p2=v2</i>] parámetros del URL<i>,</i>
+  <li>los parámetros [<i>p1=v1&amp;p2=v2</i>] de la URL<i>,</i>
   </li>
-  <li>parámetros enviados por el navegador con su solicitud;
+  <li>los parámetros enviados por el navegador con su solicitud;
   </li>
-  <li>al procesar la solicitud del usuario, la acción puede necesitar la capa [de negocio] [2b]. Una vez procesada la petición del cliente, puede desencadenar varias respuestas. Un ejemplo clásico es:
+  <li>al procesar la solicitud del usuario, la acción puede necesitar la capa [business] [2b]. Una vez procesada la solicitud del cliente, puede desencadenar diversas respuestas. Un ejemplo clásico es:
   </li>
-  <li>una página de error si la solicitud no ha podido procesarse correctamente
+  <li>una página de error si la solicitud no se ha podido procesar correctamente
   </li>
   <li>una página de confirmación en caso contrario
   </li>
-  <li>la acción ordena que se muestre una vista específica [3]. Esta vista mostrará los datos conocidos como <b>ver modelo</b>. Este es el <b>M </b>en MVC. La acción creará este modelo M [2c] e instruirá a un <b>V</b> que se mostrará [3];
+  <li>la acción indica que se muestre una vista específica [3]. Esta vista mostrará datos conocidos como el <b>modelo de vista</b>. Esta es la <b>M </b>de MVC. La acción creará este modelo M [2c] e indicará que se muestre una vista <b>V </b>[3];
   </li>
 </ul>
 <ol>
-  <li><b>respuesta</b>-la vista seleccionada <b>V </b>utiliza el modelo <b>M </b>construido por la acción para inicializar las partes dinámicas de la respuesta HTML que debe enviar al cliente, y luego envía esta respuesta.
+  <li><b>respuesta</b>: la vista <b>V</b> seleccionada utiliza el modelo <b>M </b>construido por la acción para inicializar las partes dinámicas de la respuesta HTML que debe enviar al cliente y, a continuación, envía esta respuesta.
   </li>
 </ol>
 
-<p>Aclaremos ahora la relación entre la arquitectura web MVC y la arquitectura por capas. Dependiendo de cómo definamos la <strong>modelo</strong>, estos dos conceptos pueden o no estar relacionados. Consideremos una aplicación web ASP.NET MVC de una sola capa:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062E00000242EE335F0F.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E00000242EE335F0F.png" /></td></tr></table>
+<p>Ahora, aclaremos la relación entre la arquitectura web MVC y la arquitectura por capas. Dependiendo de cómo definamos el <strong>modelo</strong>, estos dos conceptos pueden estar relacionados o no. Consideremos una aplicación web ASP.NET MVC de una sola capa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000062E00000242EE335F0F.png" width="680" height="249" style="display:inline-block; margin:4px;width:17.999cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E00000242EE335F0F.png" /></td></tr></table>
 
-<p>If we implement the [Web] layer with ASP.NET MVC, we will indeed have an MVC web architecture but not a multi-layer architecture. Here, the [Web] layer will handle everything: presentation, business logic, and data access. It is the actions that will perform this work.</p>
-<p>Consideremos ahora una arquitectura web multicapa:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007260000018CC3D6C76D.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.895cm;" class="odt-zoomable" data-zoom-src="images/10000000000007260000018CC3D6C76D.png" /></td></tr></table>
+<p>Si implementamos la capa [Web] con ASP.NET MVC, tendremos efectivamente una arquitectura web MVC, pero no una arquitectura multicapa. En este caso, la capa [Web] se encargará de todo: presentación, lógica de negocio y acceso a datos. Son las acciones las que realizarán este trabajo.</p>
+<p>Ahora, consideremos una arquitectura web multicapa:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007260000018CC3D6C76D.png" width="680" height="147" style="display:inline-block; margin:4px;width:17.999cm;height:3.895cm;" class="odt-zoomable" data-zoom-src="images/10000000000007260000018CC3D6C76D.png" /></td></tr></table>
 
-<p>La capa [Web] puede implementarse sin un framework y sin seguir el modelo MVC. Tenemos entonces una arquitectura multicapa, pero la capa Web no implementa el modelo MVC.</p>
-<p>Así, la capa [Web] anterior puede implementarse con ASP.NET MVC, dando lugar a una arquitectura por capas con una capa [Web] de estilo MVC. Una vez hecho esto, podemos sustituir esta capa ASP.NET MVC por una capa clásica ASP.NET (WebForms) manteniendo el resto (lógica de negocio, DAO, ORM) <strong>sin cambios</strong>.  Entonces tenemos una arquitectura en capas con una capa [Web] que ya no está basada en MVC.</p>
-<p>En MVC, dijimos que el modelo M era el de la vista V, i.e, el conjunto de datos mostrados por la vista V. Se da otra definición del modelo M en MVC:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000019EAC026A07.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.918cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000019EAC026A07.png" /></td></tr></table>
+<p>La capa [Web] se puede implementar sin un marco de trabajo y sin seguir el modelo MVC. Entonces tendremos una arquitectura multicapa, pero la capa Web no implementa el modelo MVC.</p>
+<p>Por lo tanto, la capa [Web] superior se puede implementar con ASP.NET MVC, lo que da como resultado una arquitectura por capas con una capa [Web] de estilo MVC. Una vez hecho esto, podemos sustituir esta capa de ASP.NET MVC por una capa clásica de ASP.NET (WebForms) <strong>sin modificar</strong> el resto (lógica de negocio, DAO, ORM).  De este modo, obtenemos una arquitectura en capas con una capa [Web] que ya no se basa en MVC.</p>
+<p>En MVC, dijimos que el modelo M era el de la vista V, es decir, el conjunto de datos mostrados por la vista V. Se ofrece otra definición del modelo M en MVC:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076E0000019EAC026A07.png" width="680" height="148" style="display:inline-block; margin:4px;width:17.999cm;height:3.918cm;" class="odt-zoomable" data-zoom-src="images/100000000000076E0000019EAC026A07.png" /></td></tr></table>
 
-<p>Muchos autores consideran que lo que hay a la derecha de la capa [Web] constituye el modelo M de MVC. Para evitar ambigüedades, podemos referirnos a:</p>
+<p>Muchos autores consideran que lo que se encuentra a la derecha de la capa [Web] constituye el modelo M de MVC. Para evitar ambigüedades, podemos referirnos a:</p>
 <ul>
-  <li><b>el modelo de dominio </b>cuando se refiere a todo lo que está a la derecha de la capa [Web]
+  <li><b>el modelo de dominio </b>cuando nos referimos a todo lo que se encuentra a la derecha de la capa [Web]
   </li>
-  <li>el <b>ver modelo </b>cuando se refiere a los datos mostrados por una vista V
+  <li>el <b>modelo de vista </b>cuando nos refiramos a los datos mostrados por una vista V
   </li>
 </ul>
 
-<p>En lo sucesivo, el término &quot;modelo M&quot; se referirá exclusivamente al <strong>modelo de</strong> V <strong>ver</strong>.</p>
+<p>En lo sucesivo, el término «modelo M» se referirá exclusivamente al <strong>modelo de una vista</strong> V.</p>
 <p><a id="refheading99551454977699"></a></p>
-<h2 id="13-herramientas-utilizadas">1.3. Herramientas utilizadas</h2>
-<p>De cara al futuro, estamos utilizando (a partir de septiembre de 2013) las versiones Express de Visual Studio 2012:</p>
+<h2 id="13-herramientas-utilizadas">1.3. <span style="color: #4f81bd">Herramientas utilizadas</span></h2>
+<p>De ahora en adelante, utilizaremos (a fecha de septiembre de 2013) las versiones Express de Visual Studio 2012:</p>
 <ul>
-  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop</a>  ] para aplicaciones de escritorio;
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop"><u><span style="color: #0563c1">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-windows-desktop</span></u></a> ] para aplicaciones de escritorio;
   </li>
-  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-web">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-Web</a> ] para aplicaciones web.
+  <li>[<a href="http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-web"><u><span style="color: #0563c1">http://www.microsoft.com/visualstudio/fra/products/visual-studio-express-for-Web</span></u></a> ] para aplicaciones web.
   </li>
 </ul>
 
-<p>Para instalar las últimas versiones de estos productos, puede utilizar el [Instalador de la plataforma web] de Microsoft (<a href="http://www.microsoft.com/web/downloads/platform.aspx">http://www.microsoft.com/Web/downloads/platform.aspx</a>).</p>
-<p>Además, utiliza la herramienta de Google <strong>Cromo</strong> navegador (<a href="http://www.google.fr/intl/fr/chrome/browser/">http://www.google.fr/intl/fr/chrome/browser/</a>). Instale el [<a id="advanced-rest-client"></a> Extensión [Advanced Rest Client] ( ). He aquí cómo hacerlo:</p>
+<p>Para instalar las últimas versiones de estos productos, puede utilizar el [Web Platform Installer] de Microsoft (<a href="http://www.microsoft.com/web/downloads/platform.aspx"><u><span style="color: #0563c1">http://www.microsoft.com/Web/downloads/platform.aspx</span></u></a>).</p>
+<p>Además, utilice el navegador <strong>Chrome</strong> de Google (<a href="http://www.google.fr/intl/fr/chrome/browser/"><u><span style="color: #0563c1">http://www.google.fr/intl/fr/chrome/browser/</span></u></a>). Instale la extensión [<a id="advanced-rest-client"></a> Advanced Rest Client] ( ). A continuación le indicamos cómo hacerlo:</p>
 <ul>
-  <li>Vaya a [Google Web Store] (<a href="https://chrome.google.com/webstore">https://chrome.google.com/webstore</a>) utilizando el navegador Chrome;
+  <li>Ve a la [Google Web Store] (<a href="https://chrome.google.com/webstore"><u><span style="color: #0563c1">https://chrome.google.com/webstore</span></u></a>) utilizando el navegador Chrome;
   </li>
   <li>busca la aplicación [Advanced Rest Client]:
   </li>
 </ul>
 
-<p><img src="images/10000000000001B0000000D21DA44C58.png" style="width:7.999cm;height:3.889cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B0000000D21DA44C58.png" /></p>
+<p><img src="images/10000000000001B0000000D21DA44C58.png" width="302" height="147" style="width:7.999cm;height:3.888cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B0000000D21DA44C58.png" /></p>
 <ul>
-  <li>la aplicación estará disponible para su descarga:
+  <li>la aplicación estará entonces disponible para su descarga:
   </li>
 </ul>
 
-<p><img src="images/10000000000003BB000000AE1112526C.png" style="width:17.48cm;height:3.184cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></p>
+<p><img src="images/10000000000003BB000000AE1112526C.png" width="661" height="120" style="width:17.48cm;height:3.186cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></p>
 <ul>
-  <li>para conseguirlo, tendrás que crear una cuenta de Google. A continuación, la [Google Web Store] te pedirá confirmación [1]:
+  <li>Para obtenerla, tendrás que crear una cuenta de Google. A continuación, la [Google Web Store] te pedirá confirmación [1]:
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000083800000381099DA849.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.673cm;" class="odt-zoomable" data-zoom-src="images/100000000000083800000381099DA849.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000083800000381099DA849.png" width="680" height="290" style="display:inline-block; margin:4px;width:17.999cm;height:7.675cm;" class="odt-zoomable" data-zoom-src="images/100000000000083800000381099DA849.png" /></td></tr></table>
 
 <ul>
-  <li>En [2], la extensión añadida está disponible en la opción [Aplicaciones] [3]. Esta opción aparece en cada nueva pestaña que crees (CTRL-T) en el navegador.
+  <li>En [2], la extensión añadida está disponible en la opción [Aplicaciones] [3]. Esta opción aparece en cada nueva pestaña que abras (CTRL-T) en el navegador.
   </li>
 </ul>
-
 <p><a id="refheading99631454977699"></a></p>
-<h2 id="14-ejemplos">1.4. Ejemplos</h2>
+<h2 id="14-ejemplos">1.4. <span style="color: #4f81bd">Ejemplos</span></h2>
 <p>La mayoría de los ejemplos de aprendizaje se limitarán únicamente a la capa web:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006370000023DEEFC5AC7.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000006370000023DEEFC5AC7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006370000023DEEFC5AC7.png" width="680" height="245" style="display:inline-block; margin:4px;width:17.999cm;height:6.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000006370000023DEEFC5AC7.png" /></td></tr></table>
 
-<p>Una vez finalizado este tutorial, presentaremos una aplicación web multicapa:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071F000002349B70ADB8.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.567cm;" class="odt-zoomable" data-zoom-src="images/100000000000071F000002349B70ADB8.png" /></td></tr></table>
+<p>Una vez completado este tutorial, presentaremos una aplicación web de varias capas:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071F000002349B70ADB8.png" width="680" height="210" style="display:inline-block; margin:4px;width:17.999cm;height:5.569cm;" class="odt-zoomable" data-zoom-src="images/100000000000071F000002349B70ADB8.png" /></td></tr></table>
 
 
 
@@ -872,8 +879,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.gihub.io" target="_blank">
+          https://stahe.gihub.io
         </a>
         <br>
         Este curso-tutorial escrito por <strong>Serge Tahé</strong> se pone a disposición del público según los términos de la
