@@ -627,17 +627,17 @@
 
 <p><span id="refheading1240912030931382" name="refheading1240912030931382" class="odt-bookmark-anchor"></span></p>
 <h1 id="8-conclusion-provisional">8. <span style="color: #365f91">Conclusión provisional</span></h1>
-<p>Aquí termina la presentación del marco ASP.NET MVC. Continuaremos con un caso práctico que ilustra el uso de este marco en una arquitectura por capas:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E30000013CE2749EC1.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.775cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E30000013CE2749EC1.png" /></td></tr></table>
+<p>Aquí finaliza la presentación del marco ASP.NET MVC. Continuaremos con un caso práctico que ilustra el uso de este marco en una arquitectura por capas:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005E30000013CE2749EC1.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.773cm;" class="odt-zoomable" data-zoom-src="images/10000000000005E30000013CE2749EC1.png" /></td></tr></table>
 
 <ul>
-  <li>la capa [Web] es la capa en contacto con el usuario de la aplicación web. Este interactúa con la aplicación web a través de páginas web visualizadas por un navegador. <b>Es en esta capa donde se encuentra ASP.NET MVC y únicamente en esta capa</b>.
+  <li>La capa [Web] es la capa que está en contacto con el usuario de la aplicación web. Este interactúa con la aplicación web a través de páginas web visualizadas por un navegador. <b>Es en esta capa donde se encuentran ASP.NET y MVC, y únicamente en esta capa</b>.
   </li>
   <li>La capa [métier] implementa las reglas de gestión de la aplicación, como el cálculo de un salario o de una factura. Esta capa utiliza datos procedentes del usuario a través de la capa [Web] y de SGBD a través de la capa [DAO].
   </li>
-  <li>La capa [DAO] (Data Access Objects), la capa [ORM] (Object Relational Mapper) y el conector ADO.NET gestiona el acceso a los datos de SGBD. La capa [ORM]  sirve de puente entre los objetos manipulados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Utilizaremos el <b>Entity Framework </b>ORM (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1">http://msdn.microsoft.com/en-us/data/ef.aspx</span></u></a>).
+  <li>La capa [DAO] (objetos de acceso a datos), la capa [ORM] (mapeador objeto-relacional) y el conector ADO.NET gestionan el acceso a los datos de la capa SGBD. La capa [ORM] actúa como puente entre los objetos manipulados por la capa [DAO] y las filas y columnas de las tablas de una base de datos relacional. Utilizaremos el <b>Entity Framework </b>ORM (<a href="http://msdn.microsoft.com/en-us/data/ef.aspx"><u><span style="color: #0563c1">http://msdn.microsoft.com/en-us/data/ef.aspx</span></u></a>).
   </li>
-  <li>La integración de las capas puede realizarse mediante un contenedor de inyección de dependencias (Dependency Injection container). Utilizaremos <b>Spring.net </b> (<a href="http://www.springframework.net/"><u><span style="color: #0563c1">http://www.springframework.net/</span></u></a> ).
+  <li>La integración de las capas puede realizarse mediante un contenedor de inyección de dependencias (Dependency Injection container). Utilizaremos <b>Spring.net </b>(<a href="http://www.springframework.net/"><u><span style="color: #0563c1">http://www.springframework.net/</span></u></a>).
   </li>
 </ul>
 
